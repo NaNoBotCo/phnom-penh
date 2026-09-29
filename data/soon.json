@@ -1,0 +1,83 @@
+{
+ "source_note": "Sub-Decree No. 167 (5 Sep 2025), the 2026 public-holiday list, as posted by the National Bank of Cambodia. Checked 2026-09-29.",
+ "items": [
+  {
+   "start": "2026-10-10",
+   "end": "2026-10-12",
+   "en": "Pchum Ben",
+   "th": "ประชุมบิณฑ์ (สารทเขมร)",
+   "km": "ពិធីបុណ្យភ្ជុំបិណ្ឌ",
+   "line_en": "Three days. Families take rice to the pagodas before dawn for the ancestors.",
+   "line_th": "หยุดสามวัน ครอบครัวนำข้าวไปวัดก่อนรุ่งสาง ทำบุญให้บรรพบุรุษ",
+   "icon": "i-lotus",
+   "photo": "monks",
+   "src": "https://www.nbc.gov.kh/english/news_and_events/official_holiday.php",
+   "line_km": "ឈប់សម្រាកបីថ្ងៃ។ គ្រួសារនាំបាយទៅវត្តមុនថ្ងៃរះ ដើម្បីឧទ្ទិសដល់ដូនតា។"
+  },
+  {
+   "start": "2026-10-15",
+   "end": "2026-10-15",
+   "en": "King-Father Norodom Sihanouk Commemoration Day",
+   "th": "วันรำลึกพระบิดา นโรดม สีหนุ",
+   "km": "ទិវាប្រារព្ធពិធីគោរពព្រះវិញ្ញាណក្ខន្ធ ព្រះករុណា ព្រះបាទ នរោត្តម សីហនុ",
+   "line_en": "Public holiday.",
+   "line_th": "วันหยุดราชการ",
+   "icon": "i-flower",
+   "photo": "sihanouk-memorial",
+   "src": "https://www.nbc.gov.kh/english/news_and_events/official_holiday.php",
+   "line_km": "ថ្ងៃឈប់សម្រាកជាផ្លូវការ។"
+  },
+  {
+   "start": "2026-10-29",
+   "end": "2026-10-29",
+   "en": "Coronation Day of King Norodom Sihamoni",
+   "th": "วันบรมราชาภิเษก พระบาทสมเด็จพระนโรดม สีหมุนี",
+   "km": "ព្រះរាជពិធីគ្រងព្រះបរមរាជសម្បត្តិ",
+   "line_en": "Public holiday.",
+   "line_th": "วันหยุดราชการ",
+   "icon": "i-star",
+   "photo": "royal-palace",
+   "src": "https://www.nbc.gov.kh/english/news_and_events/official_holiday.php",
+   "line_km": "ថ្ងៃឈប់សម្រាកជាផ្លូវការ។"
+  },
+  {
+   "start": "2026-11-09",
+   "end": "2026-11-09",
+   "en": "Independence Day",
+   "th": "วันประกาศเอกราช",
+   "km": "ទិវាបុណ្យឯករាជ្យជាតិ",
+   "line_en": "The flame is lit at the Independence Monument.",
+   "line_th": "จุดไฟที่อนุสาวรีย์เอกราช",
+   "icon": "i-flag",
+   "photo": "independence",
+   "src": "https://www.nbc.gov.kh/english/news_and_events/official_holiday.php",
+   "line_km": "គេអុជភ្លើងនៅវិមានឯករាជ្យ។"
+  },
+  {
+   "start": "2026-11-23",
+   "end": "2026-11-25",
+   "en": "Water Festival · Bon Om Touk",
+   "th": "เทศกาลน้ำ (บุญอมตูก)",
+   "km": "ព្រះរាជពិធីបុណ្យអុំទូក បណ្តែតប្រទីប និងសំពះព្រះខែ អកអំបុក",
+   "line_en": "Three-day holiday, the full moon of the river's turn. The government called off the Phnom Penh celebrations in front of the Royal Palace for 2026; the holiday stays.",
+   "line_th": "หยุดสามวัน คืนพระจันทร์เต็มดวงตอนแม่น้ำเปลี่ยนทิศ ปีนี้รัฐบาลงดงานฉลองหน้าพระราชวังในพนมเปญ แต่วันหยุดยังอยู่",
+   "icon": "i-water",
+   "photo": "water-festival-boats",
+   "src": "https://www.akp.gov.kh/post/detail/374510",
+   "line_km": "ឈប់សម្រាកបីថ្ងៃ ពេលព្រះចន្ទពេញវង់ ពេលទន្លេប្ដូរទិស។ រដ្ឋាភិបាលបានផ្អាកពិធីបុណ្យនៅមុខព្រះបរមរាជវាំងក្នុងឆ្នាំ 2026 ប៉ុន្តែថ្ងៃឈប់សម្រាកនៅដដែល។"
+  },
+  {
+   "start": "2026-12-29",
+   "end": "2026-12-29",
+   "en": "Peace Day",
+   "th": "วันสันติภาพ",
+   "km": "ទិវាសន្តិភាពនៅកម្ពុជា",
+   "line_en": "Public holiday.",
+   "line_th": "วันหยุดราชการ",
+   "icon": "i-leaf",
+   "photo": "sunset-river",
+   "src": "https://www.nbc.gov.kh/english/news_and_events/official_holiday.php",
+   "line_km": "ថ្ងៃឈប់សម្រាកជាផ្លូវការ។"
+  }
+ ]
+}

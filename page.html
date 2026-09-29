@@ -1,0 +1,715 @@
+<meta charset="utf-8">
+<title>Psar Phnom Penh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<style>
+:root{
+  --paper:#eef0f1;
+  --surface:#ffffff;
+  --sunk:#e3e7e9;
+  --ink:#12161c;
+  --muted:#5c666e;
+  --faint:#8b959b;
+  --rule:#cdd3d6;
+  --rule-soft:#dee3e5;
+  --accent:#14459b;
+  --accent-soft:#e4eaf6;
+  --brass:#8a5f12;
+  --dot:rgba(20,69,155,.55);
+  --water:#c9dcea;
+  --road:#d9dde0;
+  --road-major:#c2c8cc;
+  --shadow:0 1px 2px rgba(18,22,28,.07);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0e1216;
+    --surface:#161c22;
+    --sunk:#1d242b;
+    --ink:#dfe5e8;
+    --muted:#98a4ac;
+    --faint:#6d7981;
+    --rule:#2a333b;
+    --rule-soft:#212a31;
+    --accent:#8fb0ef;
+    --accent-soft:#1b2740;
+    --brass:#d8ad50;
+    --dot:rgba(143,176,239,.5);
+  --water:#16283a;
+  --road:#232b32;
+  --road-major:#2f3942;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0e1216;
+  --surface:#161c22;
+  --sunk:#1d242b;
+  --ink:#dfe5e8;
+  --muted:#98a4ac;
+  --faint:#6d7981;
+  --rule:#2a333b;
+  --rule-soft:#212a31;
+  --accent:#8fb0ef;
+  --accent-soft:#1b2740;
+  --brass:#d8ad50;
+  --dot:rgba(143,176,239,.5);
+  --water:#16283a;
+  --road:#232b32;
+  --road-major:#2f3942;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Kantumruy Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  /* Khmer stacks subscript consonants below the baseline; tight leading clips them. */
+  line-height:1.75;
+  font-size:15px;
+  -webkit-text-size-adjust:100%;
+}
+.mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+
+/* ---------- masthead ---------- */
+.mast{
+  background:var(--surface);
+  border-bottom:1px solid var(--rule);
+  padding:14px 18px 0;
+}
+.mast-in{max-width:1180px;margin:0 auto}
+.wordmark{
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  font-weight:700;font-size:1.28rem;letter-spacing:-.01em;margin:0;
+}
+.wordmark .kh{color:var(--ink)}
+.wordmark .en{color:var(--muted);font-weight:500;font-size:.95rem;letter-spacing:.02em}
+.lede{margin:2px 0 12px;color:var(--muted);font-size:.9rem;max-width:64ch}
+.lede b{color:var(--ink);font-weight:600}
+
+.searchwrap{position:relative;display:flex;gap:8px;align-items:stretch;padding-bottom:12px}
+#q{
+  flex:1;min-width:0;
+  font-family:inherit;font-size:1.02rem;line-height:1.6;
+  padding:9px 12px 9px 34px;
+  background:var(--paper);
+  color:var(--ink);
+  border:1px solid var(--rule);
+  border-radius:3px;
+}
+#q::placeholder{color:var(--faint)}
+.searchwrap .mag{position:absolute;left:11px;top:12px;color:var(--faint);pointer-events:none;font-size:.95rem}
+.railtoggle{
+  display:none;font-family:inherit;font-size:.95rem;padding:9px 14px;
+  background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:3px;cursor:pointer;
+}
+
+/* ---------- columns ---------- */
+.cols{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:236px minmax(0,1fr);gap:0;align-items:start}
+.rail{
+  border-right:1px solid var(--rule-soft);
+  padding:16px 16px 40px 18px;
+  position:sticky;top:0;max-height:100vh;overflow-y:auto;
+}
+.main{padding:14px 18px 48px;min-width:0}
+
+.door{margin-bottom:22px}
+.door h2{
+  font-size:.7rem;text-transform:uppercase;letter-spacing:.11em;color:var(--faint);
+  margin:0 0 6px;font-weight:600;line-height:1.4;
+}
+.door h2 .kh{text-transform:none;letter-spacing:0;font-size:.82rem;color:var(--muted)}
+.opt{
+  display:flex;justify-content:space-between;align-items:baseline;gap:8px;
+  width:100%;text-align:left;background:none;border:0;cursor:pointer;
+  font-family:inherit;font-size:.88rem;color:var(--ink);
+  padding:2px 6px;border-radius:3px;line-height:1.6;
+}
+.opt:hover{background:var(--sunk)}
+.opt[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.opt .n{font-family:"JetBrains Mono",monospace;font-size:.76rem;color:var(--brass);font-variant-numeric:tabular-nums;flex:none}
+.opt[aria-pressed="true"] .n{color:var(--accent)}
+.more{background:none;border:0;color:var(--accent);font-family:inherit;font-size:.82rem;cursor:pointer;padding:3px 6px;text-decoration:underline}
+
+/* ---------- toolbar ---------- */
+.bar{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  padding-bottom:10px;border-bottom:1px solid var(--rule-soft);margin-bottom:2px;
+}
+.count{font-size:.9rem;color:var(--muted)}
+.count b{font-family:"JetBrains Mono",monospace;color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+.spacer{flex:1}
+.views{display:flex;border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+.views button{
+  font-family:inherit;font-size:.84rem;padding:5px 13px;background:var(--surface);color:var(--muted);
+  border:0;cursor:pointer;border-right:1px solid var(--rule);
+}
+.views button:last-child{border-right:0}
+.views button[aria-pressed="true"]{background:var(--accent);color:#fff}
+:root[data-theme="dark"] .views button[aria-pressed="true"],
+:root:not([data-theme="light"]) .views button[aria-pressed="true"]{color:#0e1216}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .views button[aria-pressed="true"]{color:#fff}}
+
+.chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 0 0;min-height:0}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.78rem;padding:2px 8px;border-radius:11px;
+  background:var(--accent-soft);color:var(--accent);border:0;cursor:pointer;font-family:inherit;
+}
+.chip .x{font-weight:700;opacity:.65}
+.chip:hover .x{opacity:1}
+
+/* ---------- results ---------- */
+.rows{list-style:none;margin:0;padding:0}
+.row{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;
+  padding:11px 2px;border-bottom:1px solid var(--rule-soft);align-items:baseline;
+}
+.nm{grid-column:1;font-size:1.01rem;font-weight:600;margin:0;line-height:1.6;overflow-wrap:anywhere}
+.meta{grid-column:1;font-size:.83rem;color:var(--muted);line-height:1.6;overflow-wrap:anywhere}
+.meta .sep{color:var(--faint);padding:0 5px}
+.meta .cat{color:var(--ink)}
+.side{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right}
+.tel{font-family:"JetBrains Mono",monospace;font-size:.86rem;font-weight:500;text-decoration:none;white-space:nowrap}
+.tel:hover{text-decoration:underline}
+.links{display:flex;gap:9px;font-size:.76rem}
+.links a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+.links a:hover{color:var(--accent);border-color:var(--accent)}
+.conf{font-family:"JetBrains Mono",monospace;font-size:.7rem;color:var(--faint)}
+.showmore{
+  display:block;width:100%;margin:16px 0 0;padding:9px;
+  font-family:inherit;font-size:.9rem;background:var(--surface);color:var(--accent);
+  border:1px solid var(--rule);border-radius:3px;cursor:pointer;
+}
+.showmore:hover{background:var(--accent-soft)}
+.empty{padding:34px 4px;color:var(--muted);font-size:.95rem;max-width:56ch}
+.empty b{color:var(--ink)}
+
+/* ---------- map ---------- */
+.maphold{position:relative;margin-top:10px;background:var(--surface);border:1px solid var(--rule-soft);border-radius:3px}
+#map{display:block;width:100%;height:min(66vh,620px);cursor:crosshair}
+.maptip{
+  position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);
+  font-size:.78rem;padding:3px 8px;border-radius:3px;white-space:nowrap;
+  transform:translate(-50%,-160%);opacity:0;transition:opacity .1s;max-width:260px;overflow:hidden;text-overflow:ellipsis;
+}
+.mapnote{font-size:.8rem;color:var(--muted);padding:8px 2px 0;max-width:70ch}
+
+/* ---------- footer ---------- */
+.foot{
+  max-width:1180px;margin:0 auto;padding:20px 18px 40px;
+  border-top:1px solid var(--rule-soft);font-size:.8rem;color:var(--muted);
+}
+.foot h3{font-size:.7rem;text-transform:uppercase;letter-spacing:.11em;color:var(--faint);margin:0 0 6px;font-weight:600}
+.foot p{margin:0 0 8px;max-width:74ch;line-height:1.7}
+.foot .mono{color:var(--ink)}
+.foot dl{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin:0 0 10px;max-width:520px}
+.foot dt{color:var(--faint)}
+.foot dd{margin:0;font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums;color:var(--ink);font-size:.78rem}
+
+@media (max-width:840px){
+  .cols{grid-template-columns:1fr}
+  .rail{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--rule);padding:14px 18px 20px}
+  .rail[hidden]{display:none}
+  .railtoggle{display:block}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="mast">
+  <div class="mast-in">
+    <h1 class="wordmark"><span class="kh">ផ្សារភ្នំពេញ</span> <span class="en">Psar Phnom Penh</span></h1>
+    <p class="lede"><b>__N__</b> places in the capital, from Overture Maps. Type what you are after in Khmer or English — or walk in through a shelf.</p>
+    <div class="searchwrap">
+      <span class="mag" aria-hidden="true">⌕</span>
+      <input id="q" type="search" autocomplete="off" spellcheck="false"
+             placeholder="កាហ្វេ · coffee · ជាងកាត់សក់ · 012…" aria-label="Search places">
+      <button class="railtoggle" id="railtoggle" aria-expanded="false">☰ Doors</button>
+    </div>
+  </div>
+</header>
+
+<div class="cols">
+  <nav class="rail" id="rail" aria-label="Filters">
+    <div class="door" id="door-khan">
+      <h2>ខណ្ឌ <span class="kh">· District</span></h2>
+      <div class="opts"></div>
+    </div>
+    <div class="door" id="door-cat">
+      <h2>ធ្នើ <span class="kh">· Shelf</span></h2>
+      <div class="opts"></div>
+      <button class="more" id="morecats">more</button>
+    </div>
+    <div class="door" id="door-has">
+      <h2>Narrow</h2>
+      <div class="opts"></div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <div class="bar">
+      <span class="count" id="count"></span>
+      <span class="spacer"></span>
+      <div class="views" role="group" aria-label="View">
+        <button id="v-list" aria-pressed="true">បញ្ជី List</button>
+        <button id="v-map" aria-pressed="false">ផែនទី Map</button>
+      </div>
+    </div>
+    <div class="chips" id="chips"></div>
+
+    <section id="listview">
+      <ul class="rows" id="rows"></ul>
+      <button class="showmore" id="showmore" hidden>Show more</button>
+      <div class="empty" id="empty" hidden></div>
+    </section>
+
+    <section id="mapview" hidden>
+      <div class="maphold">
+        <canvas id="map"></canvas>
+        <div class="maptip" id="maptip"></div>
+      </div>
+      <p class="mapnote">Every dot is one of the places above. Under them: motorway to tertiary roads and the
+        Mekong, Tonlé Sap and Bassac rivers and the lakes, drawn from OpenStreetMap
+        (<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, ODbL) and cut to the
+        city's extent. Filter anything and the dots redraw to it.</p>
+    </section>
+  </main>
+</div>
+
+<footer class="foot">
+  <h3>Where this comes from</h3>
+  <p>Overture Maps Places, release <span class="mono" id="rel"></span>, fetched <span class="mono" id="fetched"></span>.
+     Rows kept for country <span class="mono">KH</span> where the locality, region or postcode names Phnom Penh.
+     <span class="mono">99.4%</span> of them originate with Meta — they are Facebook business pages carrying the
+     page's own phone and address. That is a second witness with a phone number, not first truth: a closed shop
+     keeps its page, and a home can be listed as a business.</p>
+  <p>Streets and water on the map: <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>,
+     <a href="https://opendatacommons.org/licenses/odbl/1-0/">ODbL 1.0</a>, fetched through Overpass.</p>
+  <dl>
+    <dt>Places</dt><dd id="f-n"></dd>
+    <dt>Named in Khmer script</dt><dd id="f-kh"></dd>
+    <dt>With a phone</dt><dd id="f-ph"></dd>
+    <dt>With a Facebook page</dt><dd id="f-fb"></dd>
+    <dt>District identified</dt><dd id="f-di"></dd>
+    <dt>Overture confidence ≥ 0.50</dt><dd id="f-cf"></dd>
+  </dl>
+  <p>District comes from the postcode, which was checked twice against the data: against rows whose locality
+     names a khan, and against khan names written into the address. Boeng Keng Kang and Kamboul were carved out
+     of Chamkar Mon and Pou Senchey in 2019 and these rows still carry the parent code, so those two are not
+     separated here. The <span class="mono" id="f-nodist"></span> rows with no district are shown as their own
+     row rather than dropped.</p>
+  <p>Licence <span class="mono">CDLA-Permissive-2.0</span> · © Overture Maps Foundation. That licence does not
+     clear a contribution back to OpenStreetMap, because Meta's and Foursquare's rows are in here.</p>
+</footer>
+
+<script type="text/plain" id="blob">__BLOB__</script>
+<script>
+(function(){
+"use strict";
+var CATS = __CATS__, KHAN = __KHAN__, META = __META__;
+var BASE = __BASEMAP__;
+var LAT0 = 11.30, LNG0 = 104.60;
+var B36 = "0123456789abcdefghijklmnopqrstuvwxyz";
+function n36(s){ if(s === "") return -1; var n = 0; for(var i=0;i<s.length;i++) n = n*36 + B36.indexOf(s[i]); return n; }
+
+/* ---------- parse the payload once into flat arrays ---------- */
+var blob = document.getElementById("blob").textContent;
+var starts = [], i = 0, N = 0;
+starts.push(0);
+while((i = blob.indexOf("\n", i)) !== -1){ starts.push(i+1); i++; }
+N = starts.length;
+var rowStart = new Int32Array(starts);
+var cat  = new Int16Array(N),
+    khan = new Int8Array(N),
+    lat  = new Float32Array(N),
+    lng  = new Float32Array(N),
+    conf = new Uint8Array(N),
+    flag = new Uint8Array(N);           /* 1 phone · 2 facebook · 4 address · 8 website */
+
+var hayParts = new Array(N);
+for(var r=0; r<N; r++){
+  var end = (r+1 < N) ? rowStart[r+1]-1 : blob.length;
+  var f = blob.slice(rowStart[r], end).split("\t");
+  var c = f[1] === "" ? -1 : n36(f[1]);
+  cat[r]  = c;
+  khan[r] = f[2] === "" ? -1 : n36(f[2]);
+  lat[r]  = LAT0 + n36(f[3])/1e5;
+  lng[r]  = LNG0 + n36(f[4])/1e5;
+  conf[r] = n36(f[8]);
+  flag[r] = (f[5] ? 1:0) | (f[6] ? 2:0) | (f[7] ? 4:0) | (f[9] ? 8:0);
+  hayParts[r] = (f[0] + " " + f[7] + " " + (c >= 0 ? CATS[c].replace(/_/g," ") : "")).toLowerCase();
+}
+var hay = hayParts.join("\n");
+var hayStart = new Int32Array(N);
+var acc = 0;
+for(var h=0; h<N; h++){ hayStart[h] = acc; acc += hayParts[h].length + 1; }
+hayParts = null;
+
+function field(r, k){
+  var end = (r+1 < N) ? rowStart[r+1]-1 : blob.length;
+  return blob.slice(rowStart[r], end).split("\t")[k];
+}
+function name(r){ return field(r,0); }
+
+/* ---------- forgiving search ---------- */
+/* A shop writes its trade in one script or the other. Searching in either finds both. */
+var PAIRS = [
+  ["coffee","កាហ្វេ"],["cafe","កាហ្វេ"],["market","ផ្សារ"],["restaurant","ភោជនីយដ្ឋាន"],
+  ["hotel","សណ្ឋាគារ"],["guesthouse","ផ្ទះសំណាក់"],["hospital","មន្ទីរពេទ្យ"],
+  ["pharmacy","ឱសថស្ថាន"],["school","សាលារៀន"],["pagoda","វត្ត"],["temple","វត្ត"],
+  ["bank","ធនាគារ"],["gold","មាស"],["clothes","សម្លៀកបំពាក់"],["massage","ម៉ាស្សា"],
+  ["barber","ជាងកាត់សក់"],["phone","ទូរស័ព្ទ"],["car","ឡាន"],["beauty","សម្ផស្ស"]
+];
+function expand(term){
+  var out = [term];
+  for(var p=0;p<PAIRS.length;p++){
+    if(PAIRS[p][0] === term) out.push(PAIRS[p][1]);
+    else if(PAIRS[p][1] === term) out.push(PAIRS[p][0]);
+  }
+  return out;
+}
+function recAt(off){                       /* binary search offset -> record */
+  var lo = 0, hi = N-1;
+  while(lo < hi){ var m = (lo+hi+1)>>1; if(hayStart[m] <= off) lo = m; else hi = m-1; }
+  return lo;
+}
+function matches(term){                    /* Uint8Array mask of records containing term */
+  var mask = new Uint8Array(N), at = hay.indexOf(term), t = term.length;
+  while(at !== -1){ mask[recAt(at)] = 1; at = hay.indexOf(term, at + t); }
+  return mask;
+}
+function searchMask(qq){
+  var terms = qq.toLowerCase().split(/\s+/).filter(Boolean);
+  if(!terms.length) return null;
+  var out = null;
+  for(var t=0;t<terms.length;t++){
+    var alts = expand(terms[t]), m = matches(alts[0]);
+    for(var a=1;a<alts.length;a++){ var m2 = matches(alts[a]); for(var k=0;k<N;k++) if(m2[k]) m[k] = 1; }
+    if(out === null) out = m; else for(var j=0;j<N;j++) out[j] = out[j] & m[j];
+  }
+  return out;
+}
+
+/* ---------- state ---------- */
+var S = { q:"", khan:null, cat:null, has:{}, view:"list", shown:120, catsOpen:false };
+var HAS = [
+  ["phone","With a phone", 1],
+  ["fb","With a Facebook page", 2],
+  ["addr","With a street address", 4],
+  ["conf","Overture confidence ≥ 0.50", 0]
+];
+
+function passes(r, skip){
+  if(skip !== "khan" && S.khan !== null && khan[r] !== S.khan) return false;
+  if(skip !== "cat"  && S.cat  !== null && cat[r]  !== S.cat)  return false;
+  if(skip !== "has"){
+    for(var k in S.has){ if(!S.has[k]) continue;
+      if(k === "conf"){ if(conf[r] < 50) return false; }
+      else { var bit = k === "phone" ? 1 : k === "fb" ? 2 : 4; if(!(flag[r] & bit)) return false; }
+    }
+  }
+  return true;
+}
+function build(skip){
+  var qm = searchMask(S.q), out = [];
+  for(var r=0;r<N;r++){ if(qm && !qm[r]) continue; if(passes(r, skip)) out.push(r); }
+  return out;
+}
+/* Rank: a name that starts with the query beats a name that contains it, which
+   beats a hit that was only in the address or the category. */
+function rank(list){
+  if(!S.q) return list;
+  var q = S.q.toLowerCase().split(/\s+/)[0];
+  var score = new Uint8Array(N);
+  for(var i=0;i<list.length;i++){
+    var r = list[i], nm = name(r).toLowerCase(), at = nm.indexOf(q);
+    score[r] = at === 0 ? 3 : at > 0 ? 2 : 1;
+  }
+  return list.slice().sort(function(a,b){
+    return (score[b]-score[a]) || (conf[b]-conf[a]);
+  });
+}
+
+/* ---------- render ---------- */
+var elRows = document.getElementById("rows"), elCount = document.getElementById("count"),
+    elMore = document.getElementById("showmore"), elEmpty = document.getElementById("empty"),
+    elChips = document.getElementById("chips");
+var current = [];
+
+function fmtTel(d){                        /* 12345678 -> 012 345 678 */
+  return ("0" + d).replace(/^(\d{3})(\d{3})(\d+)$/, "$1 $2 $3");
+}
+function esc(s){ return s.replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+
+function rowHTML(r){
+  var f = blob.slice(rowStart[r], (r+1<N)?rowStart[r+1]-1:blob.length).split("\t");
+  var bits = [];
+  if(f[1] !== "") bits.push('<span class="cat">' + esc(CATS[n36(f[1])].replace(/_/g," ")) + "</span>");
+  if(f[2] !== "") bits.push(esc(KHAN[n36(f[2])][0]) + " " + esc(KHAN[n36(f[2])][1]));
+  if(f[7]) bits.push(esc(f[7]));
+  var side = [];
+  if(f[5]) side.push('<a class="tel" href="tel:+855' + esc(f[5]) + '">' + esc(fmtTel(f[5])) + "</a>");
+  var links = [];
+  if(f[6]) links.push('<a href="https://www.facebook.com/' + esc(f[6]) + '" target="_blank" rel="noopener noreferrer">Facebook</a>');
+  links.push('<a href="https://www.openstreetmap.org/?mlat=' + (LAT0 + n36(f[3])/1e5).toFixed(5) +
+             "&amp;mlon=" + (LNG0 + n36(f[4])/1e5).toFixed(5) + '#map=18/' +
+             (LAT0 + n36(f[3])/1e5).toFixed(5) + "/" + (LNG0 + n36(f[4])/1e5).toFixed(5) +
+             '" target="_blank" rel="noopener noreferrer">Map</a>');
+  side.push('<span class="links">' + links.join("") + "</span>");
+  side.push('<span class="conf">' + (n36(f[8])/100).toFixed(2) + "</span>");
+  return '<li class="row"><p class="nm">' + esc(f[0]) + "</p>" +
+         '<p class="meta">' + (bits.join('<span class="sep">·</span>') || '<span style="color:var(--faint)">no category, no address stated</span>') + "</p>" +
+         '<div class="side">' + side.join("") + "</div></li>";
+}
+
+function paint(){
+  var n = current.length;
+  elCount.innerHTML = "<b>" + n.toLocaleString("en") + "</b> " + (n === 1 ? "place" : "places");
+  if(!n){
+    elRows.innerHTML = ""; elMore.hidden = true; elEmpty.hidden = false;
+    elEmpty.innerHTML = "Nothing here under <b>" + esc(S.q || "these filters") + "</b>. " +
+      "That is a gap in Overture's Phnom Penh rows, not proof the city has none — try a shorter word, " +
+      "or the other script.";
+  } else {
+    elEmpty.hidden = true;
+    var html = [], lim = Math.min(S.shown, n);
+    for(var i=0;i<lim;i++) html.push(rowHTML(current[i]));
+    elRows.innerHTML = html.join("");
+    elMore.hidden = lim >= n;
+    elMore.textContent = "Show more — " + (n - lim).toLocaleString("en") + " left";
+  }
+  if(S.view === "map") drawMap();
+}
+
+function chip(label, onclear){
+  var b = document.createElement("button");
+  b.className = "chip";
+  b.innerHTML = esc(label) + '<span class="x">×</span>';
+  b.onclick = onclear;
+  elChips.appendChild(b);
+}
+function paintChips(){
+  elChips.innerHTML = "";
+  if(S.khan !== null) chip(S.khan === -1 ? "district not stated" : KHAN[S.khan][0] + " " + KHAN[S.khan][1], function(){ S.khan = null; refresh(); });
+  if(S.cat !== null)  chip(CATS[S.cat].replace(/_/g," "), function(){ S.cat = null; refresh(); });
+  for(var k in S.has) if(S.has[k]) (function(k){
+    var lbl = HAS.filter(function(h){ return h[0] === k; })[0][1];
+    chip(lbl, function(){ S.has[k] = false; refresh(); });
+  })(k);
+}
+
+/* facet counts: each door counts as if its own filter were off, so a door you
+   are standing in still shows you the others. A zero is not drawn. */
+function paintRail(){
+  var kl = build("khan"), counts = {};
+  for(var i=0;i<kl.length;i++){ var k = khan[kl[i]]; counts[k] = (counts[k]||0) + 1; }
+  var d = document.querySelector("#door-khan .opts"); d.innerHTML = "";
+  var order = [];
+  for(var j=0;j<KHAN.length;j++) if(counts[j]) order.push([j, counts[j]]);
+  order.sort(function(a,b){ return b[1]-a[1]; });
+  if(counts[-1]) order.push([-1, counts[-1]]);
+  order.forEach(function(o){
+    var lbl = o[0] === -1 ? "district not stated" : KHAN[o[0]][0] + " " + KHAN[o[0]][1];
+    d.appendChild(mkOpt(lbl, o[1], S.khan === o[0], function(){ S.khan = (S.khan === o[0]) ? null : o[0]; refresh(); }));
+  });
+
+  var cl = build("cat"), cc = {};
+  for(var m=0;m<cl.length;m++){ var c = cat[cl[m]]; if(c >= 0) cc[c] = (cc[c]||0) + 1; }
+  var cs = Object.keys(cc).map(function(k){ return [+k, cc[k]]; }).sort(function(a,b){ return b[1]-a[1]; });
+  var dc = document.querySelector("#door-cat .opts"); dc.innerHTML = "";
+  var lim = S.catsOpen ? Math.min(cs.length, 120) : Math.min(cs.length, 14);
+  for(var p=0;p<lim;p++) (function(o){
+    dc.appendChild(mkOpt(CATS[o[0]].replace(/_/g," "), o[1], S.cat === o[0],
+      function(){ S.cat = (S.cat === o[0]) ? null : o[0]; refresh(); }));
+  })(cs[p]);
+  var mb = document.getElementById("morecats");
+  mb.hidden = cs.length <= 14;
+  mb.textContent = S.catsOpen ? "fewer" : "more — " + (cs.length - lim).toLocaleString("en") + " other shelves";
+
+  var hl = build("has"), dh = document.querySelector("#door-has .opts"); dh.innerHTML = "";
+  HAS.forEach(function(h){
+    var n = 0;
+    for(var q=0;q<hl.length;q++){
+      var r = hl[q];
+      if(h[0] === "conf" ? conf[r] >= 50 : (flag[r] & h[2])) n++;
+    }
+    if(!n) return;
+    dh.appendChild(mkOpt(h[1], n, !!S.has[h[0]], function(){ S.has[h[0]] = !S.has[h[0]]; refresh(); }));
+  });
+}
+function mkOpt(label, n, on, fn){
+  var b = document.createElement("button");
+  b.className = "opt"; b.type = "button";
+  b.setAttribute("aria-pressed", on ? "true" : "false");
+  b.innerHTML = "<span>" + esc(label) + '</span><span class="n">' + n.toLocaleString("en") + "</span>";
+  b.onclick = fn;
+  return b;
+}
+
+function refresh(){
+  S.shown = 120;
+  current = rank(build(null));
+  paintChips(); paintRail(); paint();
+}
+
+/* ---------- map ---------- */
+var cv = document.getElementById("map"), ctx = cv.getContext("2d"), tip = document.getElementById("maptip");
+var proj = null, _ext = null;
+/* Fit to the middle 98% of every point, so one stray row cannot squash the
+   city. The extent is a property of the whole set, so it is computed once. */
+function extent(){
+  if(_ext) return _ext;
+  var xs = Array.prototype.slice.call(lng), ys = Array.prototype.slice.call(lat);
+  xs.sort(function(a,b){return a-b;}); ys.sort(function(a,b){return a-b;});
+  _ext = [xs[Math.floor(N*0.01)], xs[Math.floor(N*0.99)],
+          ys[Math.floor(N*0.01)], ys[Math.floor(N*0.99)]];
+  return _ext;
+}
+/* OSM basemap: grid ints from data/basemap.json, first point absolute, the
+   rest deltas. Decoded once to lng/lat pairs. */
+var baseGeo = null;
+function baseDecode(){
+  if(baseGeo) return baseGeo;
+  var k = 1/BASE.q, lat0 = BASE.box[0], lng0 = BASE.box[1];
+  function dec(list){
+    return list.map(function(a){
+      var out = new Float64Array(a.length), x = 0, y = 0;
+      for(var i=0;i<a.length;i+=2){ x += a[i]; y += a[i+1]; out[i] = lng0 + x*k; out[i+1] = lat0 + y*k; }
+      return out;
+    });
+  }
+  baseGeo = { water: dec(BASE.water), major: dec(BASE.major), minor: dec(BASE.minor) };
+  return baseGeo;
+}
+function drawBase(css){
+  var g = baseDecode(), p = proj;
+  function trace(a, close){
+    for(var i=0;i<a.length;i+=2){
+      var x = p.ox + (a[i]-p.x0)*p.kx*p.s, y = p.oy + (p.y1-a[i+1])*p.s;
+      if(i) ctx.lineTo(x, y); else ctx.moveTo(x, y);
+    }
+    if(close) ctx.closePath();
+  }
+  ctx.beginPath();
+  g.water.forEach(function(a){ trace(a, true); });
+  ctx.fillStyle = css.getPropertyValue("--water").trim() || "#c9dcea";
+  ctx.fill("nonzero");
+  ctx.lineJoin = "round"; ctx.lineCap = "round";
+  [["minor", "--road", 0.8], ["major", "--road-major", 1.6]].forEach(function(c){
+    ctx.beginPath();
+    g[c[0]].forEach(function(a){ trace(a, false); });
+    ctx.strokeStyle = css.getPropertyValue(c[1]).trim() || "#c2c8cc";
+    ctx.lineWidth = c[2];
+    ctx.stroke();
+  });
+}
+function drawMap(){
+  var w = cv.clientWidth, h = cv.clientHeight, dpr = window.devicePixelRatio || 1;
+  if(!w || !h) return;
+  cv.width = w*dpr; cv.height = h*dpr;
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.clearRect(0,0,w,h);
+  var e = extent();
+  var x0 = e[0], x1 = e[1], y0 = e[2], y1 = e[3];
+  var kx = Math.cos(11.55*Math.PI/180);
+  var sw = (x1-x0)*kx, sh = (y1-y0);
+  var pad = 12, s = Math.min((w-pad*2)/sw, (h-pad*2)/sh);
+  var ox = (w - sw*s)/2, oy = (h - sh*s)/2;
+  proj = { x0:x0, y0:y0, y1:y1, kx:kx, s:s, ox:ox, oy:oy };
+  var css = getComputedStyle(document.body);
+  drawBase(css);
+  ctx.fillStyle = css.getPropertyValue("--dot").trim() || "rgba(20,69,155,.55)";
+  for(var i=0;i<current.length;i++){
+    var q = current[i];
+    var px = ox + (lng[q]-x0)*kx*s, py = oy + (y1-lat[q])*s;
+    ctx.fillRect(px, py, 1.4, 1.4);
+  }
+}
+function toScreen(r){
+  return [proj.ox + (lng[r]-proj.x0)*proj.kx*proj.s, proj.oy + (proj.y1-lat[r])*proj.s];
+}
+var tipPending = false;
+cv.addEventListener("mousemove", function(e){
+  if(!proj || tipPending) return;
+  tipPending = true;
+  requestAnimationFrame(function(){
+    tipPending = false;
+    var b = cv.getBoundingClientRect(), mx = e.clientX-b.left, my = e.clientY-b.top;
+    var best = -1, bd = 64;
+    for(var i=0;i<current.length;i++){
+      var p = toScreen(current[i]), dx = p[0]-mx, dy = p[1]-my, d = dx*dx+dy*dy;
+      if(d < bd){ bd = d; best = current[i]; }
+    }
+    if(best < 0){ tip.style.opacity = 0; return; }
+    var p2 = toScreen(best);
+    tip.textContent = name(best);
+    tip.style.left = p2[0] + "px"; tip.style.top = p2[1] + "px"; tip.style.opacity = 1;
+  });
+});
+cv.addEventListener("mouseleave", function(){ tip.style.opacity = 0; });
+
+/* ---------- wiring ---------- */
+var t = null;
+document.getElementById("q").addEventListener("input", function(e){
+  var v = e.target.value;
+  clearTimeout(t);
+  t = setTimeout(function(){ S.q = v.trim(); refresh(); }, 130);
+});
+document.getElementById("showmore").onclick = function(){ S.shown += 120; paint(); };
+document.getElementById("morecats").onclick = function(){ S.catsOpen = !S.catsOpen; paintRail(); };
+document.getElementById("railtoggle").onclick = function(){
+  var rail = document.getElementById("rail"), open = rail.hasAttribute("hidden");
+  if(open) rail.removeAttribute("hidden"); else rail.setAttribute("hidden","");
+  this.setAttribute("aria-expanded", open ? "true" : "false");
+};
+function setView(v){
+  S.view = v;
+  document.getElementById("listview").hidden = (v !== "list");
+  document.getElementById("mapview").hidden  = (v !== "map");
+  document.getElementById("v-list").setAttribute("aria-pressed", v === "list" ? "true":"false");
+  document.getElementById("v-map").setAttribute("aria-pressed",  v === "map"  ? "true":"false");
+  if(v === "map") drawMap();
+}
+document.getElementById("v-list").onclick = function(){ setView("list"); };
+document.getElementById("v-map").onclick  = function(){ setView("map"); };
+window.addEventListener("resize", function(){ if(S.view === "map") drawMap(); });
+var narrow = window.matchMedia("(max-width:840px)");
+function syncRail(){
+  var rail = document.getElementById("rail"), tog = document.getElementById("railtoggle");
+  if(narrow.matches){ rail.setAttribute("hidden",""); tog.setAttribute("aria-expanded","false"); }
+  else rail.removeAttribute("hidden");
+}
+narrow.addEventListener("change", syncRail);
+syncRail();
+
+refresh();
+
+/* ---------- footer figures, counted from the data on the page ---------- */
+(function(){
+  var kh = 0, ph = 0, fb = 0, di = 0, cf = 0, KHRE = /[\u1780-\u17FF]/;
+  for(var r=0;r<N;r++){
+    if(KHRE.test(name(r))) kh++;
+    if(flag[r] & 1) ph++;
+    if(flag[r] & 2) fb++;
+    if(khan[r] >= 0) di++;
+    if(conf[r] >= 50) cf++;
+  }
+  function pct(x){ return x.toLocaleString("en") + "  (" + Math.round(x/N*100) + "%)"; }
+  document.getElementById("f-n").textContent  = N.toLocaleString("en");
+  document.getElementById("f-kh").textContent = pct(kh);
+  document.getElementById("f-ph").textContent = pct(ph);
+  document.getElementById("f-fb").textContent = pct(fb);
+  document.getElementById("f-di").textContent = pct(di);
+  document.getElementById("f-cf").textContent = pct(cf);
+  document.getElementById("f-nodist").textContent = (N-di).toLocaleString("en");
+  document.getElementById("rel").textContent = META.release;
+  document.getElementById("fetched").textContent = META.fetched;
+})();
+})();
+</script>

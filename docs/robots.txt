@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://nanobotco.github.io/phnom-penh/sitemap.xml
+# AI assistants: https://nanobotco.github.io/phnom-penh/llms.txt

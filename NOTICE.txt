@@ -4,6 +4,7 @@ Carried data and pictures keep their own licences:
   Places        Overture Maps Foundation, CDLA-Permissive-2.0
   Map layers    © OpenStreetMap contributors, ODbL 1.0
   Names         Wikidata, CC0
+  Region map    Natural Earth, public domain; routes by OSRM on OpenStreetMap
   Photographs   Wikimedia Commons, each under the licence named beside it on the
                 page and in data/photos/credits.json
   Fonts         Moul, Kantumruy Pro, Noto Sans Thai, Cormorant Garamond: SIL OFL 1.1

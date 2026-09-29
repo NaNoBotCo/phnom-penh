@@ -1,5 +1,5 @@
 {
- "band": "tuk-tuk-night",
+ "band": "angkor-sunrise",
  "rates": {
   "thb": 33.57,
   "khr": 4056,
@@ -481,6 +481,7 @@
   {
    "id": "todo",
    "icon": "i-check",
+   "photo": "tuk-tuk",
    "h": {
     "en": "Do this",
     "th": "ต้องทำ",
@@ -654,6 +655,7 @@
   {
    "id": "visa",
    "icon": "i-document",
+   "photo": "independence",
    "h": {
     "en": "Visas",
     "th": "วีซ่า",
@@ -840,6 +842,7 @@
   {
    "id": "air",
    "icon": "i-plane",
+   "photo": "skyline",
    "h": {
     "en": "The airport",
     "th": "สนามบิน",
@@ -921,6 +924,7 @@
   {
    "id": "fly",
    "icon": "i-route",
+   "photo": "hero-night",
    "h": {
     "en": "Flying in and out",
     "th": "บินไป บินกลับ",
@@ -983,6 +987,7 @@
   {
    "id": "stay",
    "icon": "i-cal",
+   "photo": "bayon",
    "h": {
     "en": "How long, and Siem Reap?",
     "th": "อยู่กี่วัน ไปเสียมราฐดีไหม",
@@ -1052,6 +1057,20 @@
      ]
     },
     {
+     "t": "photo",
+     "slug": "angkor-sunrise",
+     "en": "Sunrise at Angkor Wat",
+     "th": "ตะวันขึ้นที่นครวัด",
+     "km": "ថ្ងៃរះនៅអង្គរវត្ត"
+    },
+    {
+     "t": "photo",
+     "slug": "ta-prohm",
+     "en": "Ta Prohm, where the trees hold the stones",
+     "th": "ตาพรหม ที่รากไม้โอบหิน",
+     "km": "តាព្រហ្ម ដែលឫសឈើឱបថ្ម"
+    },
+    {
      "t": "p",
      "en": "Our pick for a first trip from Chiang Mai: the half leg. It costs one domestic hop or a $10 bus, and saves the flight back through Phnom Penh.",
      "th": "ถ้ามาครั้งแรกจากเชียงใหม่ เราเลือกแบบครึ่งขา เพิ่มแค่เที่ยวบินในประเทศหรือรถบัส 10 ดอลลาร์ และไม่ต้องบินย้อนผ่านพนมเปญ",
@@ -1062,6 +1081,7 @@
   {
    "id": "prices",
    "icon": "i-coin",
+   "photo": "fruit",
    "h": {
     "en": "Prices: Phnom Penh and Chiang Mai",
     "th": "ราคา พนมเปญกับเชียงใหม่",
@@ -1145,6 +1165,7 @@
   {
    "id": "naga",
    "icon": "i-water",
+   "photo": "hero-dusk",
    "h": {
     "en": "Nagas: Khmer and Thai",
     "th": "นาค เขมรกับไทย",
@@ -1355,19 +1376,13 @@
       "https://collection.efeo.fr/ws/web/app/collection/record/218309",
       "https://www.nagaworld.com/nagaworld/"
      ]
-    },
-    {
-     "t": "photo",
-     "slug": "hero-dusk",
-     "en": "The Naga Fountain garden at dusk",
-     "th": "สวนน้ำพุนาคยามเย็น",
-     "km": "សួនទឹកពុលនាគពេលល្ងាច"
     }
    ]
   },
   {
    "id": "spirits",
    "icon": "i-home2",
+   "photo": "wat-ounalom",
    "h": {
     "en": "Spirit houses: why the Khmer ones look empty",
     "th": "ศาลพระภูมิ ทำไมศาลเขมรดูว่างเปล่า",
@@ -1469,6 +1484,7 @@
   {
    "id": "teeth",
    "icon": "i-health",
+   "photo": "riverside",
    "h": {
     "en": "Teeth and oysters",
     "th": "ทำฟันกับหอยนางรม",
@@ -1592,6 +1608,7 @@
   {
    "id": "eat",
    "icon": "i-food",
+   "photo": "amok",
    "h": {
     "en": "Picked",
     "th": "ร้านที่เลือกไว้",

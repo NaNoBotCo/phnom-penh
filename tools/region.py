@@ -78,13 +78,18 @@ def svg():
     out.append(f'<path class="rm-river" d="{d}"/>')
     road = json.loads((ROOT / "data" / "routes" / "pp_sr.json").read_text())["routes"][0]
     out.append(f'<path class="rm-road" d="{path(road["geometry"]["coordinates"], False)}"/>')
-    for a, b in FLIGHTS:
+    for i, (a, b) in enumerate(FLIGHTS):
         pa, pb = AIRPORTS[a], AIRPORTS[b]
-        out.append(f'<path class="rm-fly rm-{a}-{b}" d="{arc(pa, pb)}"/>')
+        out.append(f'<path id="fl{i}" class="rm-fly rm-{a}-{b}" d="{arc(pa, pb)}"/>')
+    # a small plane of light on each flight, staggered; page JS removes these for reduced motion
+    for i, _ in enumerate(FLIGHTS):
+        out.append(f'<g class="rm-plane"><circle r="7" class="rm-halo"/><circle r="3"/>'
+                   f'<animateMotion dur="{5 + i * 0.7:.1f}s" begin="{i * 1.1:.1f}s" repeatCount="indefinite" rotate="auto">'
+                   f'<mpath href="#fl{i}"/></animateMotion></g>')
     for code, (o, a, en, th, km) in AIRPORTS.items():
         right = True
         tx = X(o) + (10 if right else -10)
-        out.append(f'<g class="rm-ap"><circle cx="{X(o):.1f}" cy="{Y(a):.1f}" r="6"/>'
+        out.append(f'<g class="rm-ap"><circle class="rm-pulse" cx="{X(o):.1f}" cy="{Y(a):.1f}" r="6"/><circle cx="{X(o):.1f}" cy="{Y(a):.1f}" r="6"/>'
                    f'<text x="{tx:.0f}" y="{Y(a) + 4:.0f}" text-anchor="{"start" if right else "end"}">'
                    f'<tspan class="rm-code">{code}</tspan> <tspan data-en="{en}" data-th="{th}" data-km="{km}">{en}</tspan></text></g>')
     out.append("</g></svg>")

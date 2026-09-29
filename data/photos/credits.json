@@ -310,5 +310,29 @@
   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
   "author": "Chainwit.",
   "desc": "Two Thai spirit houses at a hotel"
+ },
+ "angkor-sunrise": {
+  "title": "File:Angkor Wat Sunrise (209237385).jpeg",
+  "page": "https://commons.wikimedia.org/wiki/File:Angkor_Wat_Sunrise_(209237385).jpeg",
+  "licence": "CC BY-SA 3.0",
+  "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "author": "Reinhard Onasch",
+  "desc": "500px provided description: Angkor Wat in the Sunrise. [#sunrise ,#lake ,#canon ,#cambodia ,#eos ,#pancake ,#40mm ,#6d ,#Angkor ,#Wat]"
+ },
+ "bayon": {
+  "title": "File:2016 Angkor, Angkor Thom, Bajon (44).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:2016_Angkor,_Angkor_Thom,_Bajon_(44).jpg",
+  "licence": "CC BY-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "Marcin Konsek",
+  "desc": "Bayon. Angkor Thom, Siem Reap Province, Cambodia."
+ },
+ "ta-prohm": {
+  "title": "File:Ta Prohm - TaProhm1265.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ta_Prohm_-_TaProhm1265.jpg",
+  "licence": "CC0",
+  "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "author": "lumoplank",
+  "desc": "Massive tree roots of a strangler fig spreading across the stone galleries of Ta Prohm temple."
  }
 }

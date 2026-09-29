@@ -230,7 +230,7 @@ def trip_content_boot(TC):
     order = ["TODO", "VISA", "AIR", "FLY", "STAY", "PRICE_SEC", "NAGA", "SPIRITS", "HEALTH", "EAT"]  # HEALTH id "teeth"
     secs = [getattr(TC, k) for k in order if hasattr(TC, k)]
     t = TC.t
-    return {"band": "tuk-tuk-night", "rates": TC.RATES, "cities": TC.CITIES, "words": TC.WORDS,
+    return {"band": "angkor-sunrise", "rates": TC.RATES, "cities": TC.CITIES, "words": TC.WORDS,
             "prices": TC.PRICES, "picks": TC.PICKS, "budget": TC.BUDGET, "sections": secs,
             "kicker": t("Chiang Mai → Phnom Penh", "เชียงใหม่ → พนมเปญ", "ឈៀងម៉ៃ → ភ្នំពេញ"),
             "title": t("Coming from Thailand", "มาจากเมืองไทย", "មកពីប្រទេសថៃ"),

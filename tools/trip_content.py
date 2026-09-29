@@ -31,7 +31,7 @@ ARC = "https://www.aupptechcenter.com/what-is-arc-start-up-accelerator/"
 ARC_LAUNCH = "https://thebettercambodia.com/launching-arc-start-up-accelerator-a-new-era-for-cambodian-entrepreneurs/"
 ARC_CONF = "https://mptc.gov.kh/en/2025/10/secretary-of-state-so-visothy-presided-over-the-arc-startup-accelerator-conference-2025/"
 
-VISA = dict(id="visa", icon="i-document", h=t("Visas", "วีซ่า", "ទិដ្ឋាការ"), blocks=[
+VISA = dict(id="visa", icon="i-document", photo="independence", h=t("Visas", "วีซ่า", "ទិដ្ឋាការ"), blocks=[
   dict(t="p", **t("The land border between Thailand and Cambodia has been shut since June 2025. Every trip from Chiang Mai goes by air, through Bangkok.",
                   "ด่านพรมแดนไทย–กัมพูชาปิดมาตั้งแต่มิถุนายน 2568 จากเชียงใหม่ต้องบินอย่างเดียว ต่อเครื่องที่กรุงเทพฯ",
                   "ព្រំដែនគោករវាងថៃ និងកម្ពុជាបិទតាំងពីខែមិថុនា ឆ្នាំ 2025។ ពីឈៀងម៉ៃ ត្រូវជិះយន្តហោះ ឆ្លងកាត់បាងកក។", src=[BORDER, BUSES])),
@@ -76,7 +76,7 @@ VISA = dict(id="visa", icon="i-document", h=t("Visas", "วีซ่า", "ទ�
                   "ស្ថានទូតអាមេរិកស្នើឱ្យនៅឆ្ងាយពីព្រំដែនថៃ–កម្ពុជាលើសពី 50 គ.ម។ ភ្នំពេញ និងទីក្រុងសៀមរាបនៅក្រៅចម្ងាយនោះ។", src=ADVISORY)),
 ])
 
-AIR = dict(id="air", icon="i-plane", h=t("The airport", "สนามบิน", "ព្រលានយន្តហោះ"), blocks=[
+AIR = dict(id="air", icon="i-plane", photo="skyline", h=t("The airport", "สนามบิน", "ព្រលានយន្តហោះ"), blocks=[
   dict(t="p", **t("Phnom Penh's airport is new and far out. Techo International (code KTI, not the old PNH) opened on 9 September 2025, about 20 km south of the city; our road route to Central Market is 27 km.",
                   "สนามบินพนมเปญเป็นสนามบินใหม่และอยู่ไกลเมือง เตโช (รหัส KTI ไม่ใช่ PNH แบบเดิม) เปิด 9 กันยายน 2568 อยู่ใต้เมืองราว 20 กม. ตามถนนถึงตลาดกลาง 27 กม.",
                   "ព្រលានយន្តហោះភ្នំពេញថ្មី ហើយនៅឆ្ងាយ។ អាកាសយានដ្ឋានតេជោ (កូដ KTI មិនមែន PNH ចាស់) បើកថ្ងៃទី 9 កញ្ញា 2025 ប្រហែល 20 គ.ម ខាងត្បូងទីក្រុង។ តាមផ្លូវទៅផ្សារធំថ្មី 27 គ.ម។", src=KTI_OPEN)),
@@ -92,7 +92,7 @@ AIR = dict(id="air", icon="i-plane", h=t("The airport", "สนามบิน",
   dict(t="ride", lat=11.362917, lng=104.916611, name="Techo International Airport"),
 ])
 
-FLY = dict(id="fly", icon="i-route", h=t("Flying in and out", "บินไป บินกลับ", "ហោះទៅ ហោះមក"), blocks=[
+FLY = dict(id="fly", icon="i-route", photo="hero-night", h=t("Flying in and out", "บินไป บินกลับ", "ហោះទៅ ហោះមក"), blocks=[
   dict(t="region"),
   dict(t="p", **t("No airline flies Chiang Mai or Chiang Rai to Cambodia nonstop. Change in Bangkok: Suvarnabhumi (Thai, Bangkok Airways, Air Cambodia and others) or Don Mueang (Thai AirAsia). Bangkok to Phnom Penh is about 1 h 10.",
                   "ไม่มีเที่ยวบินตรงจากเชียงใหม่หรือเชียงรายไปกัมพูชา ต่อเครื่องที่กรุงเทพฯ สุวรรณภูมิ (การบินไทย บางกอกแอร์เวย์ส แอร์กัมพูชา ฯลฯ) หรือดอนเมือง (ไทยแอร์เอเชีย) กรุงเทพฯ–พนมเปญราว 1 ชม. 10 นาที",
@@ -108,7 +108,7 @@ FLY = dict(id="fly", icon="i-route", h=t("Flying in and out", "บินไป �
   ]),
 ])
 
-STAY = dict(id="stay", icon="i-cal", h=t("How long, and Siem Reap?", "อยู่กี่วัน ไปเสียมราฐดีไหม", "ស្នាក់ប៉ុន្មានថ្ងៃ ទៅសៀមរាបឬទេ?"), blocks=[
+STAY = dict(id="stay", icon="i-cal", photo="bayon", h=t("How long, and Siem Reap?", "อยู่กี่วัน ไปเสียมราฐดีไหม", "ស្នាក់ប៉ុន្មានថ្ងៃ ទៅសៀមរាបឬទេ?"), blocks=[
   dict(t="cards", cards=[
     dict(k=t("3 nights", "3 คืน", "3 យប់"), h=t("Phnom Penh only", "พนมเปญอย่างเดียว", "តែភ្នំពេញ"),
          p=t("Day one the palace, the museum and the river loop; day two the markets and a spa; day three Wat Phnom at dawn and whatever you missed. Fly in and out of KTI.",
@@ -123,12 +123,14 @@ STAY = dict(id="stay", icon="i-cal", h=t("How long, and Siem Reap?", "อยู�
              "เมืองละ 3 คืน บัตรนครวัด 3 วัน (62 ดอลลาร์ ใช้ภายใน 7 วัน) คุ้มถ้ามาเพราะปราสาท ปราสาทไกลๆ (บันทายศรี เบงเมเลีย) ต้องใช้วันเพิ่ม",
              "ក្រុងនីមួយៗ 3 យប់ សំបុត្រអង្គរ 3 ថ្ងៃ ($62 ប្រើក្នុង 7 ថ្ងៃ)។ សមនឹងទៅបើអ្នកមកដើម្បីប្រាសាទ។"), src=ANGKOR),
   ]),
+  dict(t="photo", slug="angkor-sunrise", **t("Sunrise at Angkor Wat", "ตะวันขึ้นที่นครวัด", "ថ្ងៃរះនៅអង្គរវត្ត")),
+  dict(t="photo", slug="ta-prohm", **t("Ta Prohm, where the trees hold the stones", "ตาพรหม ที่รากไม้โอบหิน", "តាព្រហ្ម ដែលឫសឈើឱបថ្ម")),
   dict(t="p", **t("Our pick for a first trip from Chiang Mai: the half leg. It costs one domestic hop or a $10 bus, and saves the flight back through Phnom Penh.",
                   "ถ้ามาครั้งแรกจากเชียงใหม่ เราเลือกแบบครึ่งขา เพิ่มแค่เที่ยวบินในประเทศหรือรถบัส 10 ดอลลาร์ และไม่ต้องบินย้อนผ่านพนมเปญ",
                   "ការជ្រើសរើសរបស់យើងសម្រាប់ដំណើរដំបូងពីឈៀងម៉ៃ៖ ពាក់កណ្ដាលជើង។ ចំណាយតែជើងហោះក្នុងស្រុក ឬឡានក្រុង $10 ហើយមិនបាច់ហោះត្រឡប់តាមភ្នំពេញ។")),
 ])
 
-EAT = dict(id="eat", icon="i-food", h=t("Picked", "ร้านที่เลือกไว้", "ជ្រើសរើស"), blocks=[dict(t="picks", ids=["dos-besos", "amaze-burger", "brooklyn-pizza", "arc"])])
+EAT = dict(id="eat", icon="i-food", photo="amok", h=t("Picked", "ร้านที่เลือกไว้", "ជ្រើសរើស"), blocks=[dict(t="picks", ids=["dos-besos", "amaze-burger", "brooklyn-pizza", "arc"])])
 
 PICKS = [
   dict(id="dos-besos", name="Dos Besos", icon="i-food", color="#f06a2c", lat=11.53709, lng=104.90694, phone="+85577977016", fb="160251091170950",
@@ -157,7 +159,7 @@ NAGAWORLD = "https://www.nagaworld.com/nagaworld/"
 def pair(k, kh, th, src=None):
     return dict(k=k, h=kh, p=th, src=src)
 
-NAGA = dict(id="naga", icon="i-water", h=t("Nagas: Khmer and Thai", "นาค เขมรกับไทย", "នាគ ខ្មែរ និងថៃ"), blocks=[
+NAGA = dict(id="naga", icon="i-water", photo="hero-dusk", h=t("Nagas: Khmer and Thai", "นาค เขมรกับไทย", "នាគ ខ្មែរ និងថៃ"), blocks=[
   dict(t="photo", slug="wat-phnom", **t("The naga stair at Wat Phnom", "บันไดนาควัดพนม", "ជណ្ដើរនាគវត្តភ្នំ")),
   dict(t="p", **t("Both countries keep the naga at the water, the stair and the door. The stories they tell about it are different, and so is the body.",
                   "ทั้งสองประเทศมีนาคอยู่ที่น้ำ ที่บันได ที่ประตู แต่เรื่องเล่าต่างกัน รูปร่างก็ต่างกัน",
@@ -204,7 +206,6 @@ NAGA = dict(id="naga", icon="i-water", h=t("Nagas: Khmer and Thai", "นาค �
                   "บันไดทิศตะวันออกของวัดพนม หัวนาคบนห้าชั้นของอนุสาวรีย์เอกราช น้ำพุนาคในสวนข้างๆ ปี 1892 มีสะพานนาคข้ามคลองทางใต้วัดพนม ตอนนี้คลองไม่มีแล้ว ส่วนนาคาเวิลด์ตั้งชื่อตามนาคเจ็ดเศียรที่บริษัทบอกว่าเฝ้าแม่น้ำของเมือง",
                   "ជណ្ដើរខាងកើតវត្តភ្នំ ក្បាលនាគលើថ្នាក់ទាំង 5 នៃវិមានឯករាជ្យ និងទឹកពុលនាគក្នុងសួនក្បែរនោះ។ ឆ្នាំ 1892 មានស្ពាននាគឆ្លងព្រែកខាងត្បូងវត្តភ្នំ ព្រែកនោះលែងមានហើយ។ NagaWorld យកឈ្មោះតាមនាគ 7 ក្បាល ដែលក្រុមហ៊ុននិយាយថាការពារទន្លេរបស់ទីក្រុង។",
                   src=["https://en.wikipedia.org/wiki/Independence_Monument_(Cambodia)", EFEO, NAGAWORLD])),
-  dict(t="photo", slug="hero-dusk", **t("The Naga Fountain garden at dusk", "สวนน้ำพุนาคยามเย็น", "សួនទឹកពុលនាគពេលល្ងាច")),
 ])
 
 NUMBEO = ["https://www.numbeo.com/cost-of-living/in/Phnom-Penh", "https://www.numbeo.com/cost-of-living/in/Chiang-Mai"]
@@ -245,7 +246,7 @@ PRICES = [
      ["https://www.you.co/sg/blog/cambodia-atm-withdrawal-guide/", "https://www.krungsri.com/getmedia/546f2617-8522-47b8-9b06-6c2cb49f32d0/fee-withdrawal-via-atm-for-international-card-11032026-en"]),
 ]
 
-PRICE_SEC = dict(id="prices", icon="i-coin", h=t("Prices: Phnom Penh and Chiang Mai", "ราคา พนมเปญกับเชียงใหม่", "តម្លៃ ភ្នំពេញ និងឈៀងម៉ៃ"), blocks=[
+PRICE_SEC = dict(id="prices", icon="i-coin", photo="fruit", h=t("Prices: Phnom Penh and Chiang Mai", "ราคา พนมเปญกับเชียงใหม่", "តម្លៃ ភ្នំពេញ និងឈៀងម៉ៃ"), blocks=[
   dict(t="p", **t("Phnom Penh prices in dollars, Chiang Mai in baht, both turned into one currency at the 29 September rate ($1 = ฿33.57 = 4,056 riel). Food and rent come from Numbeo, which people fill in themselves.",
                   "พนมเปญคิดเป็นดอลลาร์ เชียงใหม่เป็นบาท แปลงเป็นสกุลเดียวที่อัตรา 29 กันยายน (1 ดอลลาร์ = 33.57 บาท = 4,056 เรียล) ราคาอาหารและค่าเช่ามาจาก Numbeo ที่ผู้ใช้กรอกเอง",
                   "តម្លៃភ្នំពេញជាដុល្លារ ឈៀងម៉ៃជាបាត ប្ដូរជារូបិយប័ណ្ណតែមួយតាមអត្រា 29 កញ្ញា ($1 = ฿33.57 = 4,056 រៀល)។ តម្លៃម្ហូប និងជួលផ្ទះមកពី Numbeo ដែលអ្នកប្រើបំពេញខ្លួនឯង។", src=RATES["src"] + NUMBEO)),
@@ -273,7 +274,7 @@ SANPHUM = "https://th.wikipedia.org/wiki/%E0%B8%A8%E0%B8%B2%E0%B8%A5%E0%B8%9E%E0
 BAAN = "https://baanlaesuan.com/279892/maintenance/spirit-house-difference"
 LPRU = "https://culture.lpru.ac.th/WebCulture2553/CultureKnowledge/file/06-01.pdf"
 
-SPIRITS = dict(id="spirits", icon="i-home2", h=t("Spirit houses: why the Khmer ones look empty", "ศาลพระภูมิ ทำไมศาลเขมรดูว่างเปล่า", "ផ្ទះអ្នកតា ហេតុអ្វីរបស់ខ្មែរមើលទៅទទេ"), blocks=[
+SPIRITS = dict(id="spirits", icon="i-home2", photo="wat-ounalom", h=t("Spirit houses: why the Khmer ones look empty", "ศาลพระภูมิ ทำไมศาลเขมรดูว่างเปล่า", "ផ្ទះអ្នកតា ហេតុអ្វីរបស់ខ្មែរមើលទៅទទេ"), blocks=[
   dict(t="p", **t("In Thailand you buy a spirit house with its people: a guardian figure, servants, dancers, an elephant and a horse. In Cambodia the little house by the gate often holds only incense, fruit and a garland. The two houses are built for different beings.",
                   "ในไทย ซื้อศาลพระภูมิมาพร้อมตุ๊กตา เจ้าที่ คนรับใช้ นางรำ ช้าง ม้า ในกัมพูชา ศาลเล็กๆ ข้างประตูมักมีแค่ธูป ผลไม้ และพวงมาลัย เพราะศาลสองแบบสร้างให้คนละตน",
                   "នៅថៃ គេទិញផ្ទះព្រះភូមិមកជាមួយរូបតុក្កតា៖ អ្នកការពារ អ្នកបម្រើ អ្នករាំ ដំរី និងសេះ។ នៅកម្ពុជា ផ្ទះតូចក្បែរទ្វារច្រើនតែមានធូប ផ្លែឈើ និងកម្រងផ្កា។ ផ្ទះទាំងពីរសាងសង់សម្រាប់អង្គផ្សេងគ្នា។")),
@@ -308,7 +309,7 @@ TOPAZ = "https://www.cambodgemag.com/en/post/topaz-brings-marennes-ol%C3%A9ron-o
 SOFITEL = "https://www.sofitel-phnompenh-phokeethra.com/restaurants-bars/la-coupole/"
 PNTD = "https://journals.plos.org/plosntds/article?id=10.1371%2Fjournal.pntd.0014353"
 
-HEALTH = dict(id="teeth", icon="i-health", h=t("Teeth and oysters", "ทำฟันกับหอยนางรม", "ធ្មេញ និងងាវ"), blocks=[
+HEALTH = dict(id="teeth", icon="i-health", photo="riverside", h=t("Teeth and oysters", "ทำฟันกับหอยนางรม", "ធ្មេញ និងងាវ"), blocks=[
   dict(t="h", **t("Is Phnom Penh good for dentistry?", "พนมเปญทำฟันดีไหม", "ភ្នំពេញល្អសម្រាប់ព្យាបាលធ្មេញទេ?")),
   dict(t="p", **t("Patients fly in for it, mostly from Australia, Japan and Singapore. From Chiang Mai the saving mostly disappears: cleanings, fillings and root canals cost about the same, zirconia crowns were cheaper on Chiang Mai clinics' published lists, and a top-brand implant with its crown runs close to the same in both cities.",
                   "มีคนบินมาทำฟัน ส่วนใหญ่จากออสเตรเลีย ญี่ปุ่น สิงคโปร์ แต่ถ้ามาจากเชียงใหม่ แทบไม่ประหยัด ขูดหินปูน อุดฟัน รักษารากฟันราคาพอๆ กัน ครอบฟันเซอร์โคเนียตามราคาที่คลินิกเชียงใหม่ประกาศถูกกว่า รากเทียมยี่ห้อดีพร้อมครอบราคาใกล้กัน",
@@ -339,7 +340,7 @@ PPSR_FARES = "https://www.momondo.com/flights/phnom-penh/siem-reap"
 def step(when, what, how, src=None):
     return dict(when=when, what=what, how=how, src=src)
 
-TODO = dict(id="todo", icon="i-check", h=t("Do this", "ต้องทำ", "ត្រូវធ្វើ"), blocks=[
+TODO = dict(id="todo", icon="i-check", photo="tuk-tuk", h=t("Do this", "ต้องทำ", "ត្រូវធ្វើ"), blocks=[
   dict(t="steps", steps=[
     step(t("Before you book", "ก่อนจอง", "មុនកក់"), t("Passport: 6 months left, 1 blank page", "พาสปอร์ตเหลือ 6 เดือน มีหน้าว่าง 1 หน้า", "លិខិតឆ្លងដែន៖ នៅសល់ 6 ខែ ទំព័រទំនេរ 1"),
          t("Check it now; a renewal takes weeks.", "เช็กตอนนี้ ต่ออายุใช้เวลาหลายสัปดาห์", "ពិនិត្យឥឡូវ ការបន្តត្រូវការច្រើនសប្ដាហ៍។"), TOURISM),

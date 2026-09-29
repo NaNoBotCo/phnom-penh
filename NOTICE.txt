@@ -1,0 +1,9 @@
+Text and code written for this site: text CC BY 4.0, credit "NaNoBotCo"; code MIT.
+
+Carried data and pictures keep their own licences:
+  Places        Overture Maps Foundation, CDLA-Permissive-2.0
+  Map layers    © OpenStreetMap contributors, ODbL 1.0
+  Names         Wikidata, CC0
+  Photographs   Wikimedia Commons, each under the licence named beside it on the
+                page and in data/photos/credits.json
+  Fonts         Moul, Kantumruy Pro, Noto Sans Thai, Cormorant Garamond: SIL OFL 1.1

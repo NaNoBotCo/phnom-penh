@@ -18,6 +18,8 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="__SITE__card.jpg">
+<link rel="alternate" type="text/plain" title="For AI assistants" href="llms.txt">
+<script type="application/ld+json">__JSONLD__</script>
 <script>if(/[.]translate[.]goog$/.test(location.hostname))location.replace("https://"+location.hostname.slice(0,-15).replace(/--/g,"~").replace(/-/g,".").replace(/~/g,"-")+location.pathname+location.search.replace(/([?&])_x_tr_[^&]*/g,"$1").replace(/[?&]+$/,"").replace(/[?]&+/,"?")+location.hash)</script>
 <style>
 /*__FONTS__*/
@@ -212,6 +214,69 @@ a.shot .tx .dist{display:inline-block;margin-top:4px;font-size:.78rem;font-weigh
   @keyframes fall{0%{transform:translate(0,0) rotate(0);opacity:0}10%{opacity:1}100%{transform:translate(-14px,100px) rotate(220deg);opacity:0}}
   .ev.live{box-shadow:var(--shadow),0 0 0 2px color-mix(in srgb,var(--gold-hi) 55%,transparent)}
 }
+/* picks */
+.pick{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:4px;position:relative;overflow:hidden}
+.pick::after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--c) 35%,transparent),transparent)}
+.pick .pk-ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;color:#fff;background:var(--c)}
+.pick b{font-size:1.12rem;line-height:1.3;margin-top:4px}
+.pick .mt{font-size:.82rem;color:var(--muted)}
+.pick p{margin:4px 0 0;font-size:.92rem;line-height:1.5}
+.pick{align-self:start}
+.pick .pk-row{display:flex;gap:6px;align-items:center;margin-top:auto;padding-top:10px}
+.pick .pk-row .pill{padding:7px 10px}
+.pick .d{font-weight:700;font-size:.85rem;color:var(--c);margin-right:auto}
+/* trip page */
+.trip{max-width:860px}
+.toc{display:flex;gap:6px;flex-wrap:wrap;padding:14px 0 4px}
+.asof{font-size:.8rem;color:var(--faint);margin:6px 0 0}
+.tsec{padding:26px 0 8px;border-bottom:1px solid var(--line)}
+.tsec h2{font-family:var(--serif);font-size:2rem;line-height:1.1;margin:0 0 12px;display:flex;gap:10px;align-items:center}
+.tsec h2 .ico{width:28px;height:28px;color:var(--gold)}
+.tsec h3{font-size:1.08rem;margin:18px 0 6px}
+.tsec p{max-width:66ch}
+.tsec .src{font-size:.72rem;color:var(--faint);white-space:nowrap}
+.tsec a.src{padding:0 2px}
+.facts{display:grid;grid-template-columns:minmax(120px,32%) 1fr;gap:8px 16px;margin:10px 0}
+.facts dt{font-weight:700;color:var(--muted);font-size:.92rem}
+.facts dd{margin:0}
+.tcards{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:12px 0}
+.tcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;box-shadow:var(--shadow)}
+.tcard.hot{border:2px solid var(--gold-hi);box-shadow:var(--shadow),0 0 30px -10px var(--gold-hi)}
+.tcard .tc-k{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.tcard b{display:block;font-size:1.12rem;line-height:1.3;margin:2px 0 4px}
+.tcard p{margin:0;font-size:.94rem;line-height:1.55;color:var(--muted)}
+.pgrid{display:grid;gap:4px;margin:10px 0}
+.prow{display:grid;grid-template-columns:1fr;gap:4px;padding:10px 0;border-bottom:1px solid var(--line)}
+@media (min-width:700px){.prow{grid-template-columns:200px 1fr 110px;align-items:center}}
+.plab{display:flex;gap:8px;align-items:center;font-weight:600;line-height:1.3}
+.plab .ico{color:var(--gold)}
+.plab small{display:block;font-weight:400;color:var(--faint);font-size:.76rem}
+.bars{display:grid;gap:4px}
+.bar{position:relative;height:26px;border-radius:8px;background:var(--bg2);overflow:hidden;display:flex;align-items:center;justify-content:space-between;padding:0 8px;font-size:.8rem}
+.bar::before{content:"";position:absolute;inset:0;right:auto;width:var(--w);border-radius:8px;z-index:0}
+.bar.pp::before{background:linear-gradient(90deg,color-mix(in srgb,var(--lotus) 55%,transparent),color-mix(in srgb,var(--lotus) 85%,transparent))}
+.bar.cm::before{background:linear-gradient(90deg,color-mix(in srgb,var(--indigo) 45%,transparent),color-mix(in srgb,var(--indigo) 80%,transparent))}
+.bar span,.bar b{position:relative;z-index:1}
+.bar b{font-variant-numeric:tabular-nums}
+.pwin{font-size:.84rem;font-weight:700;color:var(--muted)}
+.th-wins .pwin{color:var(--indigo)}
+.pnote{grid-column:1/-1;margin:0;font-size:.84rem;color:var(--muted)}
+.regionwrap{margin:12px 0}
+.regionmap{width:100%;height:auto;display:block;border-radius:18px;box-shadow:var(--shadow)}
+.rm-sea{fill:var(--water)} .rm-land{fill:var(--bg2);stroke:var(--line);stroke-width:.8}
+.rm-th{fill:color-mix(in srgb,var(--indigo) 14%,var(--bg2));stroke:var(--line);stroke-width:.8}
+.rm-kh{fill:color-mix(in srgb,var(--lotus) 16%,var(--bg2));stroke:var(--line);stroke-width:.8}
+.rm-water{fill:var(--water)} .rm-river{fill:none;stroke:var(--water);stroke-width:1.4}
+.rm-cty{font:600 13px var(--body);fill:var(--faint);letter-spacing:.2em;text-transform:uppercase;text-anchor:middle}
+.rm-road{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-dasharray:1 6}
+.rm-fly{fill:none;stroke:var(--lotus);stroke-width:2;stroke-dasharray:6 6;opacity:.85}
+@media (prefers-reduced-motion:no-preference){.rm-fly{animation:fly 1.6s linear infinite}@keyframes fly{to{stroke-dashoffset:-24}}}
+.rm-ap circle{fill:var(--ink);stroke:var(--gold-hi);stroke-width:2.5}
+.rm-ap text{font:600 13px var(--body);fill:var(--ink);paint-order:stroke;stroke:var(--bg);stroke-width:4px}
+.rm-ap .rm-code{font-weight:800;fill:var(--lotus)}
+.tphoto{margin:14px 0}
+.tphoto img{width:100%;border-radius:18px;display:block}
+.tphoto figcaption{font-size:.74rem;color:var(--faint);margin-top:4px}
 /* bands (site-kit) */
 .band{position:relative;isolation:isolate;margin:40px 0 20px;width:100%;min-height:clamp(300px,58vh,560px);display:grid;align-items:end;
   background-size:cover;background-position:center;background-attachment:fixed;background-color:#0d0b1f;color:#fff;text-decoration:none}
@@ -414,6 +479,15 @@ footer dd{margin:0;font-variant-numeric:tabular-nums;color:var(--ink)}
   </section>
 </main>
 
+<main class="wrap">
+  <section class="sec" id="picks" aria-labelledby="picks-h">
+    <div class="sh"><h2 id="picks-h" data-t="picks">Picked</h2></div>
+    <div class="hscroll golist" id="pickrow"></div>
+  </section>
+</main>
+
+<a class="band" id="bandtrip" href="#/trip"></a>
+
 <a class="band" id="band1" href="#/l/wat-phnom"></a>
 
 <main class="wrap">
@@ -453,6 +527,7 @@ footer dd{margin:0;font-variant-numeric:tabular-nums;color:var(--ink)}
 
 <div class="panel" id="listpanel" role="dialog" aria-modal="true" aria-labelledby="lp-t"></div>
 <div class="panel" id="lmpanel" role="dialog" aria-modal="true"></div>
+<div class="panel" id="trippanel" role="dialog" aria-modal="true" aria-labelledby="trip-h"></div>
 <div class="panel" id="mappanel" role="dialog" aria-modal="true" aria-label="Map">
   <canvas id="bigmap"></canvas>
   <div class="phead"><a class="iconbtn" href="#/" aria-label="Back" data-back><svg class="ico"><use href="#i-back"/></svg></a><span class="t" data-t="map">Map</span></div>
@@ -466,6 +541,7 @@ footer dd{margin:0;font-variant-numeric:tabular-nums;color:var(--ink)}
   </div>
   <div class="mapnote">© OpenStreetMap contributors · Overture Maps</div>
 </div>
+<template id="regiontpl"><!--__REGION__--></template>
 <div class="scrimall" id="scrim"></div>
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-t"></div>
 
@@ -532,7 +608,8 @@ var W = {
  riverNote:["June to October the Mekong floods up the Tonlé Sap into the lake; in November it turns back. Drawn from the season, not a gauge.",
             "มิถุนายนถึงตุลาคม น้ำโขงหนุนโตนเลสาบขึ้นไปสู่ทะเลสาบ พฤศจิกายนจึงไหลกลับ ภาพนี้วาดตามฤดู ไม่ใช่ค่าวัดจริง",
             "ពីខែមិថុនាដល់តុលា ទឹកមេគង្គហូរឡើងតាមទន្លេសាបចូលបឹង ហើយខែវិច្ឆិកាវាហូរត្រឡប់វិញ។ គូរតាមរដូវ មិនមែនតាមការវាស់ទេ។"],
- nearGps:["from your phone's position","จากตำแหน่งโทรศัพท์","ពីទីតាំងទូរស័ព្ទរបស់អ្នក"]
+ nearGps:["from your phone's position","จากตำแหน่งโทรศัพท์","ពីទីតាំងទូរស័ព្ទរបស់អ្នក"],
+ picks:["Picked","ร้านที่เลือกไว้","ជ្រើសរើស"]
 };
 var LANG = store("lang") || "en", LI = {en:0,th:1,km:2};
 function T(k,n){ var v = W[k] ? W[k][LI[LANG]] : k; return n!==undefined ? v.replace("{n}",n) : v; }
@@ -1023,10 +1100,72 @@ function openLandmark(id){
   openPanel(el);
 }
 
+
+/* ---------- picks: named places with their Grab buttons ---------- */
+var TRIP = BOOT.trip;
+function L3(o){ return o ? (LANG==="th" ? (o.th||o.en) : LANG==="km" ? (o.km||o.en) : o.en) : ""; }
+function pickCard(pk){
+  var d = ME ? '<span class="d">'+fmtD(dist(ME.lat,ME.lng,pk.lat,pk.lng))+'</span>' : "";
+  return '<div class="pick" style="--c:'+(pk.color||"var(--lotus)")+'"><span class="pk-ic">'+ico(pk.icon)+'</span>'+
+    '<b>'+esc(pk.name)+'</b><span class="mt">'+esc(L3(pk.what))+'</span>'+(pk.line?'<p>'+esc(L3(pk.line))+'</p>':"")+
+    '<span class="pk-row">'+d+rideBtn(pk.lat,pk.lng,pk.name)+(pk.phone?'<a class="pill" href="tel:'+esc(pk.phone)+'">'+ico("i-phone")+'</a>':"")+
+    (pk.fb?'<a class="pill" href="https://www.facebook.com/'+esc(pk.fb)+'" target="_blank" rel="noopener" aria-label="Facebook">'+ico("i-link")+'</a>':"")+
+    (pk.url?'<a class="pill" href="'+esc(pk.url)+'" target="_blank" rel="noopener">'+ico("i-globe")+'</a>':"")+'</span></div>';
+}
+function paintPicks(){
+  if(!TRIP) return;
+  $("pickrow").innerHTML = TRIP.picks.map(pickCard).join("");
+  var b=$("bandtrip"); b.style.backgroundImage="url(img/"+TRIP.band+".jpg)";
+  b.innerHTML='<div class="in"><span class="kicker">'+esc(L3(TRIP.kicker))+'</span><h2>'+esc(L3(TRIP.title))+'</h2><p>'+esc(L3(TRIP.lede))+'</p></div><span class="cred">'+credit(TRIP.band)+'</span>';
+}
+
+/* ---------- the trip page: coming from Thailand ---------- */
+function money(usd){ /* in the reader's currency first */
+  var r=TRIP.rates, b="฿"+Math.round(usd*r.thb).toLocaleString("en"), u="$"+(usd<10?usd.toFixed(2):Math.round(usd).toLocaleString("en"));
+  return LANG==="th" ? b : u;
+}
+function priceTable(){
+  var rows=TRIP.prices, html='<div class="pgrid">';
+  rows.forEach(function(p){
+    var mx=Math.max(p.pp,p.cm), cheaper = Math.abs(p.pp-p.cm)/mx < .08 ? "same" : p.pp<p.cm ? "pp" : "cm";
+    var pct = cheaper==="same" ? "" : Math.round((1-Math.min(p.pp,p.cm)/mx)*100)+"%";
+    html += '<div class="prow'+(cheaper==="cm"?" th-wins":"")+'"><div class="plab">'+ico(p.icon)+'<span>'+esc(L3(p.item))+(p.unit?' <small>'+esc(L3(p.unit))+'</small>':"")+'</span></div>'+
+      '<div class="bars"><div class="bar pp" style="--w:'+(p.pp/mx*100).toFixed(1)+'%"><span>'+esc(L3(TRIP.cities.pp))+'</span><b>'+money(p.pp)+'</b></div>'+
+      '<div class="bar cm" style="--w:'+(p.cm/mx*100).toFixed(1)+'%"><span>'+esc(L3(TRIP.cities.cm))+'</span><b>'+money(p.cm)+'</b></div></div>'+
+      '<div class="pwin">'+(cheaper==="same"?esc(L3(TRIP.words.same)):esc(LANG==="en"?L3(TRIP.cities[cheaper])+" "+pct+" "+L3(TRIP.words.cheaper):L3(TRIP.cities[cheaper])+L3(TRIP.words.cheaper)+" "+pct))+'</div>'+
+      (p.note?'<p class="pnote">'+esc(L3(p.note))+'</p>':"")+'</div>';
+  });
+  return html+'</div>';
+}
+function block(b){
+  if(b.t==="p") return '<p>'+esc(L3(b))+(b.src?srcLink(b.src):"")+'</p>';
+  if(b.t==="h") return '<h3>'+esc(L3(b))+'</h3>';
+  if(b.t==="facts") return '<dl class="facts">'+b.rows.map(function(r){ return '<dt>'+esc(L3(r.k))+'</dt><dd>'+esc(L3(r.v))+(r.src?srcLink(r.src):"")+'</dd>'; }).join("")+'</dl>';
+  if(b.t==="cards") return '<div class="tcards">'+b.cards.map(function(c){ return '<div class="tcard'+(c.hot?" hot":"")+'"><span class="tc-k">'+esc(L3(c.k))+'</span><b>'+esc(L3(c.h))+'</b><p>'+esc(L3(c.p))+'</p>'+(c.src?srcLink(c.src):"")+'</div>'; }).join("")+'</div>';
+  if(b.t==="prices") return priceTable();
+  if(b.t==="region") return '<div class="regionwrap">'+document.getElementById("regiontpl").innerHTML+'</div>';
+  if(b.t==="picks") return '<div class="hscroll golist">'+b.ids.map(function(id){ return pickCard(TRIP.picks.filter(function(x){ return x.id===id; })[0]); }).join("")+'</div>';
+  if(b.t==="ride") return '<p>'+rideBtn(b.lat,b.lng,b.name,true)+'</p>';
+  if(b.t==="photo") return '<figure class="tphoto"><img src="img/'+b.slug+'.jpg" alt="" loading="lazy"><figcaption>'+esc(L3(b))+' · '+credit(b.slug)+'</figcaption></figure>';
+  return "";
+}
+function srcLink(u){ var list = Array.isArray(u)?u:[u]; return ' <span class="src">'+esc(T("source"))+' '+list.map(function(x,i){ return '<a class="src" href="'+esc(x)+'" target="_blank" rel="noopener">'+(i+1)+'</a>'; }).join(" ")+'</span>'; }
+function openTrip(sec){
+  var el=$("trippanel");
+  var toc = TRIP.sections.map(function(s){ return '<a class="pill" href="#/trip/'+s.id+'">'+ico(s.icon)+esc(L3(s.h))+'</a>'; }).join("");
+  el.innerHTML = '<div class="phead"><a class="iconbtn" href="#/" aria-label="Back" data-back>'+ico("i-back")+'</a><span class="t">'+esc(L3(TRIP.title))+'</span></div>'+
+    '<div class="lhero" style="min-height:280px"><span class="bg" style="background-image:url(img/'+TRIP.band+'.jpg)"></span><div class="in"><span class="kicker" style="color:#ffe3a3">'+esc(L3(TRIP.kicker))+'</span><h2 id="trip-h">'+esc(L3(TRIP.title))+'</h2><p style="margin:.3rem 0 0;max-width:40ch">'+esc(L3(TRIP.lede))+'</p><span class="cred">'+credit(TRIP.band)+'</span></div></div>'+
+    '<div class="wrap trip"><nav class="toc">'+toc+'</nav><p class="asof">'+esc(L3(TRIP.asof))+'</p>'+
+    TRIP.sections.map(function(s){ return '<section class="tsec" id="t-'+s.id+'"><h2>'+ico(s.icon)+esc(L3(s.h))+'</h2>'+s.blocks.map(block).join("")+'</section>'; }).join("")+'</div>';
+  if(!el.classList.contains("open")) openPanel(el);
+  Array.prototype.forEach.call(el.querySelectorAll(".regionmap [data-en]"),function(t){ t.textContent=t.getAttribute("data-"+LANG)||t.getAttribute("data-en"); });
+  if(sec){ var t=$("t-"+sec); if(t) setTimeout(function(){ el.scrollTo({top:t.offsetTop-70}); },30); } else el.scrollTop=0;
+}
+
 /* ---------- panels + router ---------- */
 var OPEN=null;
-function openPanel(el){ [$("listpanel"),$("lmpanel"),$("mappanel")].forEach(function(p){ if(p!==el) p.classList.remove("open"); }); el.classList.add("open"); el.scrollTop=0; OPEN=el; document.body.style.overflow="hidden"; }
-function closePanels(){ [$("listpanel"),$("lmpanel"),$("mappanel")].forEach(function(p){ p.classList.remove("open"); }); OPEN=null; document.body.style.overflow=""; MAP.on=false; }
+function openPanel(el){ [$("listpanel"),$("lmpanel"),$("mappanel"),$("trippanel")].forEach(function(p){ if(p!==el) p.classList.remove("open"); }); el.classList.add("open"); el.scrollTop=0; OPEN=el; document.body.style.overflow="hidden"; }
+function closePanels(){ [$("listpanel"),$("lmpanel"),$("mappanel"),$("trippanel")].forEach(function(p){ p.classList.remove("open"); }); OPEN=null; document.body.style.overflow=""; MAP.on=false; }
 var navCount=0;
 function route(){
   var h=decodeURIComponent(location.hash.replace(/^#\/?/,"")), parts=h.split("/");
@@ -1037,6 +1176,7 @@ function route(){
   else if(parts[0]==="q"){ openList("all",parts.slice(1).join("/")); tab="list"; }
   else if(parts[0]==="l"){ openLandmark(parts[1]); tab="home"; }
   else if(parts[0]==="map"){ openMap(parts[1]); tab="map"; }
+  else if(parts[0]==="trip"){ openTrip(parts[1]); tab="home"; }
   else closePanels();
   ["home","list","map","saved"].forEach(function(t){ var a=$("tab-"+t); if(t===tab) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
 }
@@ -1183,7 +1323,7 @@ function setLang(l){
 Array.prototype.forEach.call(document.querySelectorAll(".langs button"),function(b){ b.onclick=function(){ setLang(b.dataset.lang); }; });
 $("whereform").onsubmit=function(e){ e.preventDefault(); var v=$("whereq").value.trim(); location.hash = v ? "#/q/"+encodeURIComponent(v) : "#/s/all"; };
 
-function paintAll(){ var m=paintClock(); paintTiles(); paintNear(); paintHours(m); paintSoon(); paintGo(); paintLoop(); paintBands(); paintFooter(); river(); }
+function paintAll(){ var m=paintClock(); paintTiles(); paintNear(); paintHours(m); paintSoon(); paintGo(); paintPicks(); paintLoop(); paintBands(); paintFooter(); river(); }
 var riverOnce=river; river=function(){ paintRiverCap(); if(!river.done){ river.done=true; riverOnce(); } };
 setLang(LANG);
 motes();

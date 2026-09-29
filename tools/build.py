@@ -4,7 +4,7 @@
     python3 tools/build.py
 
 Reads   data/pp.json (Overture places)  data/basemap.json + data/basemap_core.json (OSM)
-        data/landmarks.json  data/soon.json  data/photos/  cache/osrm/loop.json
+        data/landmarks.json  data/soon.json  data/photos/  data/routes/loop.json
 Writes  docs/index.html  docs/data/*.js  docs/img/  docs/card.jpg
 
 The data files load as <script src>, not fetch(), so the page also works opened
@@ -102,12 +102,12 @@ def photos():
 # ---------- the river loop, drawn at build time ----------
 
 def loop_svg(landmarks, base):
-    route = json.loads((ROOT / "cache" / "osrm" / "loop.json").read_text())["routes"][0]
+    route = json.loads((ROOT / "data" / "routes" / "loop.json").read_text())["routes"][0]
     stops = ["wat-phnom", "post-office", "wat-ounalom", "national-museum", "royal-palace",
              "independence", "wat-langka", "russian-market", "central-market"]
     L = {l["id"]: l for l in landmarks}
     # Gate: each stop snapped to the road within 250 m (compound centroids sit inside their walls).
-    wp = json.loads((ROOT / "cache" / "osrm" / "loop.json").read_text())["waypoints"]
+    wp = json.loads((ROOT / "data" / "routes" / "loop.json").read_text())["waypoints"]
     far = [(stops[i % len(stops)], round(w["distance"])) for i, w in enumerate(wp) if w["distance"] > 250]
     if far:
         raise SystemExit(f"loop stop(s) snapped too far from the road: {far}")
@@ -224,6 +224,24 @@ def card(credits):
     im.convert("RGB").save(DOCS / "card.jpg", quality=86)
 
 
+# ---------- trip page ----------
+
+def trip_content_boot(TC):
+    order = ["VISA", "AIR", "FLY", "STAY", "PRICE_SEC", "NAGA", "SPIRITS", "HEALTH", "EAT"]  # HEALTH id "teeth"
+    secs = [getattr(TC, k) for k in order if hasattr(TC, k)]
+    t = TC.t
+    return {"band": "tuk-tuk-night", "rates": TC.RATES, "cities": TC.CITIES, "words": TC.WORDS,
+            "prices": TC.PRICES, "picks": TC.PICKS, "sections": secs,
+            "kicker": t("Chiang Mai → Phnom Penh", "เชียงใหม่ → พนมเปญ", "ឈៀងម៉ៃ → ភ្នំពេញ"),
+            "title": t("Coming from Thailand", "มาจากเมืองไทย", "មកពីប្រទេសថៃ"),
+            "lede": t("Visas, the new airport, flights, how long to stay, Siem Reap or not, prices against Chiang Mai, and what is not the same.",
+                      "วีซ่า สนามบินใหม่ เที่ยวบิน อยู่กี่วัน ไปเสียมราฐไหม ราคาเทียบเชียงใหม่ และสิ่งที่ไม่เหมือนกัน",
+                      "ទិដ្ឋាការ ព្រលានយន្តហោះថ្មី ជើងហោះ ស្នាក់ប៉ុន្មានថ្ងៃ ទៅសៀមរាបឬទេ តម្លៃធៀបឈៀងម៉ៃ និងអ្វីដែលមិនដូចគ្នា។"),
+            "asof": t("Checked 29 September 2026. Rules and prices move; the links go to the sources.",
+                      "ตรวจเมื่อ 29 กันยายน 2569 กฎและราคาเปลี่ยนได้ ลิงก์พาไปที่มา",
+                      "ពិនិត្យថ្ងៃទី 29 កញ្ញា 2026។ ច្បាប់ និងតម្លៃអាចប្ដូរ តំណនាំទៅប្រភព។")}
+
+
 # ---------- main ----------
 
 def main():
@@ -274,20 +292,28 @@ def main():
     boot = {"catShelf": [shelf_of(c) for c in cats], "shelves": shelves, "khan": khan, "landmarks": landmarks, "soon": soon["items"],
             "credits": credits, "meta": meta, "loop": loop, "n": len(lines),
             "route": [[round(p[0], 5), round(p[1], 5)] for p in
-                      json.loads((ROOT / "cache" / "osrm" / "loop.json").read_text())["routes"][0]["geometry"]["coordinates"]]}
+                      json.loads((ROOT / "data" / "routes" / "loop.json").read_text())["routes"][0]["geometry"]["coordinates"]]}
 
+    import trip_content as TC, region, robots_ad
+    trip = trip_content_boot(TC)
+    boot["trip"] = trip
+    (ROOT / "data" / "trip.json").write_text(json.dumps(trip, ensure_ascii=False, indent=1))
+    region_svg, _ = region.svg()
     icons = (ROOT / "tools" / "icons.svg").read_text()
     icons = icons.replace('<svg xmlns="http://www.w3.org/2000/svg">', '<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">', 1)
     tmpl = (ROOT / "tools" / "page.html").read_text()
     html = (tmpl.replace("/*__FONTS__*/", (ROOT / "tools" / "fonts.css").read_text())
                 .replace("<!--__ICONS__-->", icons)
                 .replace("<!--__LOOP__-->", svg)
+                .replace("<!--__REGION__-->", region_svg)
                 .replace("__BOOT__", json.dumps(boot, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
                 .replace("__N__", "{:,}".format(len(lines)))
+                .replace("__JSONLD__", robots_ad.jsonld(boot, SITE_URL))
                 .replace("__SITE__", SITE_URL))
     (DOCS / "index.html").write_text(html)
     card(credits)
-    (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n")
+    (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n# AI assistants: {SITE_URL}llms.txt\n")
+    (DOCS / "llms.txt").write_text(robots_ad.llms(boot, SITE_URL))
     (DOCS / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
         f'<url><loc>{SITE_URL}</loc><lastmod>{__import__("datetime").date.today()}</lastmod></url></urlset>\n')

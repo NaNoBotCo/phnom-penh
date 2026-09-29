@@ -277,6 +277,21 @@ a.shot .tx .dist{display:inline-block;margin-top:4px;font-size:.78rem;font-weigh
 .tphoto{margin:14px 0}
 .tphoto img{width:100%;border-radius:18px;display:block}
 .tphoto figcaption{font-size:.74rem;color:var(--faint);margin-top:4px}
+.steps{list-style:none;margin:10px 0;padding:0;counter-reset:st}
+.steps li{counter-increment:st;position:relative;padding:12px 0 12px 48px;border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(st);position:absolute;left:0;top:12px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--gold-hi);color:#1b1530}
+.steps .st-when{display:block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.steps b{display:block;font-size:1.06rem;line-height:1.35}
+.steps p{margin:2px 0 0;color:var(--muted);font-size:.94rem;line-height:1.55}
+.budget{background:var(--surface);border:2px solid var(--gold-hi);border-radius:var(--r);padding:16px;margin:18px 0;box-shadow:var(--shadow)}
+.budget h3{margin:0 0 10px}
+.b-in{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.b-in label{display:flex;flex-direction:column;gap:4px;font-size:.84rem;color:var(--muted);font-weight:600}
+.b-in input,.b-in select{font:inherit;font-size:1.05rem;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:8px 10px;min-height:44px}
+.b-rows{display:grid;grid-template-columns:1fr auto;gap:4px 14px;margin:14px 0 6px}
+.b-rows dt{color:var(--muted)} .b-rows dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.b-rows .b-tot{border-top:2px solid var(--line);padding-top:8px;margin-top:4px;font-size:1.15rem;font-weight:800;color:var(--ink)}
+.b-note{font-size:.8rem;color:var(--faint);margin:6px 0 0}
 /* bands (site-kit) */
 .band{position:relative;isolation:isolate;margin:40px 0 20px;width:100%;min-height:clamp(300px,58vh,560px);display:grid;align-items:end;
   background-size:cover;background-position:center;background-attachment:fixed;background-color:#0d0b1f;color:#fff;text-decoration:none}
@@ -1119,6 +1134,50 @@ function paintPicks(){
   b.innerHTML='<div class="in"><span class="kicker">'+esc(L3(TRIP.kicker))+'</span><h2>'+esc(L3(TRIP.title))+'</h2><p>'+esc(L3(TRIP.lede))+'</p></div><span class="cred">'+credit(TRIP.band)+'</span>';
 }
 
+
+/* ---------- the to-do list and the cost of the trip ---------- */
+function stepsHTML(b){
+  return '<ol class="steps">'+b.steps.map(function(st){ return '<li><span class="st-when">'+esc(L3(st.when))+'</span><b>'+esc(L3(st.what))+'</b><p>'+esc(L3(st.how))+(st.src?srcLink(st.src):"")+'</p></li>'; }).join("")+'</ol>';
+}
+var BW = {
+ h:["What it costs","ค่าใช้จ่าย","ចំណាយ"], pass:["Passport","พาสปอร์ต","លិខិតឆ្លងដែន"], us:["Needs a visa","ต้องมีวีซ่า","ត្រូវការទិដ្ឋាការ"], thai:["Thai","ไทย","ថៃ"],
+ npp:["Nights in Phnom Penh","คืนในพนมเปญ","យប់នៅភ្នំពេញ"], nsr:["Nights in Siem Reap","คืนในเสียมราฐ","យប់នៅសៀមរាប"], room:["Your room, a night ($)","ค่าห้องต่อคืน (ดอลลาร์)","បន្ទប់ក្នុងមួយយប់ ($)"],
+ leg:["Phnom Penh to Siem Reap","พนมเปญไปเสียมราฐ","ភ្នំពេញទៅសៀមរាប"], bus:["Bus","รถบัส","ឡានក្រុង"], fly:["Fly","เครื่องบิน","យន្តហោះ"],
+ flights:["Flights from Chiang Mai and home, via Bangkok","เที่ยวบินไปกลับเชียงใหม่ ผ่านกรุงเทพฯ","ជើងហោះពីឈៀងម៉ៃ និងត្រឡប់ តាមបាងកក"], visa:["Cambodia e-Visa","e-Visa กัมพูชา","e-Visa កម្ពុជា"],
+ kti:["KTI airport to the city","สนามบิน KTI เข้าเมือง","ព្រលាន KTI ទៅក្រុង"], sai:["Siem Reap airport shuttle","รถรับส่งสนามบินเสียมราฐ","ឡានដឹកព្រលានសៀមរាប"], angkor:["Angkor pass","บัตรนครวัด","សំបុត្រអង្គរ"],
+ food:["Food","อาหาร","អាហារ"], rooms:["Rooms","ที่พัก","បន្ទប់"], sim:["SIM","ซิม","ស៊ីម"], total:["Total, one person","รวมต่อคน","សរុប សម្រាប់មួយនាក់"],
+ note:["Food is two cheap meals and half a mid-range dinner for two a day, from Numbeo. Fares are booking-site ranges. Grab rides in town are not counted.",
+       "อาหารคิดจากอาหารจานถูกสองมื้อและครึ่งหนึ่งของมื้อค่ำสองคนต่อวัน จาก Numbeo ค่าเครื่องบินเป็นช่วงราคาจากเว็บจอง ไม่รวมค่า Grab ในเมือง",
+       "អាហារ៖ អាហារថោកពីរពេល និងពាក់កណ្ដាលអាហារល្ងាចពីរនាក់ក្នុងមួយថ្ងៃ ពី Numbeo។ តម្លៃយន្តហោះជាចន្លោះពីគេហទំព័រកក់។ មិនរាប់ Grab ក្នុងក្រុង។"]
+};
+function BT(k){ return BW[k][LI[LANG]]; }
+var BS = {pass:"us", npp:3, nsr:2, room:30, leg:"bus"};
+function budgetHTML(){
+  function num(id,v){ return '<label>'+esc(BT(id))+'<input type="number" min="0" max="60" step="1" data-b="'+id+'" value="'+v+'"></label>'; }
+  function sel(id,opts){ return '<label>'+esc(BT(id))+'<select data-b="'+id+'">'+opts.map(function(o){ return '<option value="'+o+'"'+(BS[id]===o?" selected":"")+'>'+esc(BT(o))+'</option>'; }).join("")+'</select></label>'; }
+  return '<div class="budget"><h3>'+esc(BT("h"))+'</h3><div class="b-in">'+sel("pass",["us","thai"])+num("npp",BS.npp)+num("nsr",BS.nsr)+num("room",BS.room)+sel("leg",["bus","fly"])+'</div><div id="b-out"></div></div>';
+}
+function budgetCalc(){
+  var B=TRIP.budget, sr=BS.nsr>0, days=BS.npp+BS.nsr+1, rows=[];
+  function add(k,lo,hi){ rows.push([k,lo,hi===undefined?lo:hi]); }
+  add("flights", B.cnx[0]*2, B.cnx[1]*2);
+  if(BS.pass!=="thai") add("visa", B.evisa);
+  add("kti", B.kti[0]*(sr?1:2), B.kti[1]*(sr?1:2));
+  if(sr){ if(BS.leg==="bus") add("bus", B.bus_sr); else add("fly", B.fly_sr[0], B.fly_sr[1]);
+          add("sai", B.sai*(BS.leg==="fly"?2:1)); add("angkor", BS.nsr>2?B.angkor3:B.angkor1); }
+  add("rooms", BS.room*(BS.npp+BS.nsr)); add("food", Math.round(B.meal_day*days)); add("sim", B.sim);
+  var lo=0, hi=0; rows.forEach(function(r){ lo+=r[1]; hi+=r[2]; });
+  function m(a,b){ var r=TRIP.rates; function one(x){ return LANG==="th" ? "฿"+Math.round(x*r.thb).toLocaleString("en") : "$"+Math.round(x).toLocaleString("en"); } return a===b ? one(a) : one(a)+"–"+one(b).replace(/^[$฿]/,""); }
+  var lab = {bus:BT("leg")+" · "+BT("bus"), fly:BT("leg")+" · "+BT("fly")};
+  $("b-out").innerHTML = '<dl class="b-rows">'+rows.map(function(r){ return '<dt>'+esc(lab[r[0]]||BT(r[0]))+'</dt><dd>'+m(r[1],r[2])+'</dd>'; }).join("")+
+    '<dt class="b-tot">'+esc(BT("total"))+'</dt><dd class="b-tot">'+m(lo,hi)+'</dd></dl><p class="b-note">'+esc(BT("note"))+srcLink([].concat(B.src.food,B.src.fares,B.src.ground))+'</p>';
+}
+function wireBudget(root){
+  var box=root.querySelector(".budget"); if(!box) return;
+  Array.prototype.forEach.call(box.querySelectorAll("[data-b]"),function(i){ i.oninput=i.onchange=function(){ var k=i.dataset.b; BS[k] = (k==="pass"||k==="leg") ? i.value : Math.max(0,Math.min(60,+i.value||0)); budgetCalc(); }; });
+  budgetCalc();
+}
+
 /* ---------- the trip page: coming from Thailand ---------- */
 function money(usd){ /* in the reader's currency first */
   var r=TRIP.rates, b="฿"+Math.round(usd*r.thb).toLocaleString("en"), u="$"+(usd<10?usd.toFixed(2):Math.round(usd).toLocaleString("en"));
@@ -1143,6 +1202,8 @@ function block(b){
   if(b.t==="facts") return '<dl class="facts">'+b.rows.map(function(r){ return '<dt>'+esc(L3(r.k))+'</dt><dd>'+esc(L3(r.v))+(r.src?srcLink(r.src):"")+'</dd>'; }).join("")+'</dl>';
   if(b.t==="cards") return '<div class="tcards">'+b.cards.map(function(c){ return '<div class="tcard'+(c.hot?" hot":"")+'"><span class="tc-k">'+esc(L3(c.k))+'</span><b>'+esc(L3(c.h))+'</b><p>'+esc(L3(c.p))+'</p>'+(c.src?srcLink(c.src):"")+'</div>'; }).join("")+'</div>';
   if(b.t==="prices") return priceTable();
+  if(b.t==="steps") return stepsHTML(b);
+  if(b.t==="budget") return budgetHTML();
   if(b.t==="region") return '<div class="regionwrap">'+document.getElementById("regiontpl").innerHTML+'</div>';
   if(b.t==="picks") return '<div class="hscroll golist">'+b.ids.map(function(id){ return pickCard(TRIP.picks.filter(function(x){ return x.id===id; })[0]); }).join("")+'</div>';
   if(b.t==="ride") return '<p>'+rideBtn(b.lat,b.lng,b.name,true)+'</p>';
@@ -1158,6 +1219,7 @@ function openTrip(sec){
     '<div class="wrap trip"><nav class="toc">'+toc+'</nav><p class="asof">'+esc(L3(TRIP.asof))+'</p>'+
     TRIP.sections.map(function(s){ return '<section class="tsec" id="t-'+s.id+'"><h2>'+ico(s.icon)+esc(L3(s.h))+'</h2>'+s.blocks.map(block).join("")+'</section>'; }).join("")+'</div>';
   if(!el.classList.contains("open")) openPanel(el);
+  wireBudget(el);
   Array.prototype.forEach.call(el.querySelectorAll(".regionmap [data-en]"),function(t){ t.textContent=t.getAttribute("data-"+LANG)||t.getAttribute("data-en"); });
   if(sec){ var t=$("t-"+sec); if(t) setTimeout(function(){ el.scrollTo({top:t.offsetTop-70}); },30); } else el.scrollTop=0;
 }

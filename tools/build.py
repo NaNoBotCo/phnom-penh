@@ -227,11 +227,11 @@ def card(credits):
 # ---------- trip page ----------
 
 def trip_content_boot(TC):
-    order = ["VISA", "AIR", "FLY", "STAY", "PRICE_SEC", "NAGA", "SPIRITS", "HEALTH", "EAT"]  # HEALTH id "teeth"
+    order = ["TODO", "VISA", "AIR", "FLY", "STAY", "PRICE_SEC", "NAGA", "SPIRITS", "HEALTH", "EAT"]  # HEALTH id "teeth"
     secs = [getattr(TC, k) for k in order if hasattr(TC, k)]
     t = TC.t
     return {"band": "tuk-tuk-night", "rates": TC.RATES, "cities": TC.CITIES, "words": TC.WORDS,
-            "prices": TC.PRICES, "picks": TC.PICKS, "sections": secs,
+            "prices": TC.PRICES, "picks": TC.PICKS, "budget": TC.BUDGET, "sections": secs,
             "kicker": t("Chiang Mai → Phnom Penh", "เชียงใหม่ → พนมเปญ", "ឈៀងម៉ៃ → ភ្នំពេញ"),
             "title": t("Coming from Thailand", "มาจากเมืองไทย", "មកពីប្រទេសថៃ"),
             "lede": t("Visas, the new airport, flights, how long to stay, Siem Reap or not, prices against Chiang Mai, and what is not the same.",
@@ -264,7 +264,7 @@ def main():
             raise SystemExit(f"landmark {l['id']} has no photo in data/photos/picks.json")
 
     used = {e["photo"] for e in soon["items"]} | {s[6] for s in SHELVES if s[6]}
-    used |= set(re.findall(r'"([a-z-]+)",\[\"', (ROOT / "tools" / "page.html").read_text()))
+    used |= set(re.findall(r'\["[a-z]+","([a-z-]+)",\[\"', (ROOT / "tools" / "page.html").read_text()))
     missing = sorted(u for u in used if u not in credits)
     if missing:
         raise SystemExit(f"photo(s) named but not in data/photos/credits.json: {missing}")

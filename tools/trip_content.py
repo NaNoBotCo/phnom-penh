@@ -330,3 +330,39 @@ HEALTH = dict(id="teeth", icon="i-health", h=t("Teeth and oysters", "ทำฟ�
                   "អ្វីដែលភោជនីយដ្ឋានថ្លៃមិនអាចប្ដូរ៖ ភាពត្រជាក់មិនសម្លាប់ជំងឺរលាកថ្លើម A ក្នុងងាវទេ តែកម្ដៅសម្លាប់បាន (90 °C រយៈពេល 90 វិនាទី)។ CDC អាមេរិកណែនាំកុំញ៉ាំងាវឆៅ ដោយសារ Vibrio ដែលគ្រោះថ្នាក់បំផុតចំពោះអ្នកមានជំងឺថ្លើម ទឹកនោមផ្អែម មហារីក ឬភាពស៊ាំខ្សោយ។ ការសិក្សាឆ្នាំ 2026 នៅឆ្នេរភាគខាងកើតថៃ រកឃើញងាវឆៅមានមេរោគច្រើន។", src=[FSANZ, CDC_V, PNTD])),
   dict(t="ride", lat=11.54846, lng=104.92849, name="Topaz Restaurant"),
 ])
+
+ANGKOR_TIX = "https://ticket.angkorenterprise.gov.kh/"
+CELLCARD = "https://www.cellcard.com.kh/"
+CNX_FARES = "https://www.skyscanner.com/routes/cnx/sai/chiang-mai-to-siem-reap-angkor.html"
+PPSR_FARES = "https://www.momondo.com/flights/phnom-penh/siem-reap"
+
+def step(when, what, how, src=None):
+    return dict(when=when, what=what, how=how, src=src)
+
+TODO = dict(id="todo", icon="i-check", h=t("Do this", "ต้องทำ", "ត្រូវធ្វើ"), blocks=[
+  dict(t="steps", steps=[
+    step(t("Before you book", "ก่อนจอง", "មុនកក់"), t("Passport: 6 months left, 1 blank page", "พาสปอร์ตเหลือ 6 เดือน มีหน้าว่าง 1 หน้า", "លិខិតឆ្លងដែន៖ នៅសល់ 6 ខែ ទំព័រទំនេរ 1"),
+         t("Check it now; a renewal takes weeks.", "เช็กตอนนี้ ต่ออายุใช้เวลาหลายสัปดาห์", "ពិនិត្យឥឡូវ ការបន្តត្រូវការច្រើនសប្ដាហ៍។"), TOURISM),
+    step(t("Before you book", "ก่อนจอง", "មុនកក់"), t("On a Thai extension of stay? Re-entry permit", "อยู่ด้วยการต่ออายุ? ทำรีเอ็นทรี", "ស្នាក់ដោយការបន្ត? ធ្វើលិខិតចូលវិញ"),
+         t("฿1,000 at Chiang Mai immigration or the airport before you fly. Without it the stay ends at the gate. DTV holders skip this.", "1,000 บาท ที่ ตม. เชียงใหม่หรือสนามบินก่อนบิน ถ้าไม่มี การอยู่ต่อสิ้นสุดตอนออก ผู้ถือ DTV ไม่ต้องทำ", "฿1,000 នៅអន្តោប្រវេសន៍ឈៀងម៉ៃ ឬព្រលានមុនហោះ។ បើគ្មាន ការស្នាក់នៅបញ្ចប់។ អ្នកកាន់ DTV មិនបាច់។"), REENTRY),
+    step(t("Book", "จอง", "កក់"), t("Chiang Mai → Bangkok → Phnom Penh (KTI); home from Siem Reap (SAI) → Bangkok", "เชียงใหม่ → กรุงเทพฯ → พนมเปญ (KTI) ขากลับเสียมราฐ (SAI) → กรุงเทพฯ", "ឈៀងម៉ៃ → បាងកក → ភ្នំពេញ (KTI) ត្រឡប់ពីសៀមរាប (SAI) → បាងកក"),
+         t("Search the airport code KTI, not PNH. One-stop fares from Chiang Mai run about $120–240 each way on booking sites.", "ค้นรหัส KTI ไม่ใช่ PNH ตั๋วต่อเครื่องจากเชียงใหม่ราว 120–240 ดอลลาร์ต่อเที่ยวในเว็บจอง", "ស្វែងរកកូដ KTI មិនមែន PNH។ តម្លៃពីឈៀងម៉ៃ ប្រហែល $120–240 ម្ដងៗ។"), CNX_FARES),
+    step(t("3+ working days before", "ก่อนบิน 3 วันทำการขึ้นไป", "មុន 3 ថ្ងៃធ្វើការឡើង"), t("Cambodia e-Visa, $30 (not needed on a Thai passport)", "e-Visa กัมพูชา 30 ดอลลาร์ (พาสปอร์ตไทยไม่ต้อง)", "e-Visa កម្ពុជា $30 (លិខិតឆ្លងដែនថៃមិនត្រូវការ)"),
+         t("evisa.gov.kh only. Print it or keep the PDF. Siem Reap airport also sells visas on arrival; we found no official word of a counter at KTI.", "ที่ evisa.gov.kh เท่านั้น พิมพ์หรือเก็บ PDF สนามบินเสียมราฐมีวีซ่าหน้าด่าน แต่ยังไม่พบประกาศทางการว่า KTI มี", "តែ evisa.gov.kh។ បោះពុម្ព ឬទុក PDF។ ព្រលានសៀមរាបលក់ទិដ្ឋាការពេលមកដល់ តែមិនទាន់ឃើញការបញ្ជាក់ផ្លូវការថា KTI មាន។"), EVISA),
+    step(t("Within 7 days before landing", "ภายใน 7 วันก่อนถึง", "ក្នុង 7 ថ្ងៃមុនចុះចត"), t("Cambodia e-Arrival card, free", "บัตรขาเข้ากัมพูชา ฟรี", "ប័ណ្ណមកដល់កម្ពុជា ឥតគិតថ្លៃ"),
+         t("arrival.gov.kh. Screenshot the QR code.", "arrival.gov.kh แคปหน้าจอคิวอาร์โค้ดไว้", "arrival.gov.kh។ ថតអេក្រង់ QR កូដ។"), ARRIVAL),
+    step(t("Landing at KTI", "ลงที่ KTI", "ចុះនៅ KTI"), t("SIM, cash, ride", "ซิม เงินสด รถ", "ស៊ីម សាច់ប្រាក់ ឡាន"),
+         t("SIM counters after baggage (Cellcard's ordinary 30-day plan is $6 for 90 GB). ATMs in arrivals, about $5 a withdrawal. Grab to the centre $10–21, or the city bus for 1,500 riel.", "เคาน์เตอร์ซิมหลังรับกระเป๋า (แพ็ก 30 วันปกติของ Cellcard 6 ดอลลาร์ 90 GB) ATM ที่ขาเข้า ราว 5 ดอลลาร์ต่อครั้ง Grab เข้าเมือง 10–21 ดอลลาร์ หรือรถเมล์ 1,500 เรียล", "តូបស៊ីមក្រោយយកឥវ៉ាន់ (គម្រោង 30 ថ្ងៃ Cellcard $6 បាន 90 GB)។ ATM នៅច្រកមកដល់ ប្រហែល $5។ Grab ទៅក្រុង $10–21 ឬឡានក្រុង 1,500 រៀល។"), [CELLCARD, WING, KTI_BUS]),
+    step(t("Day before Angkor", "ก่อนเที่ยวนครวัด 1 วัน", "មុនទៅអង្គរ 1 ថ្ងៃ"), t("Angkor pass online, dated for your full day", "ซื้อบัตรนครวัดออนไลน์ ลงวันที่วันเที่ยวเต็มวัน", "ទិញសំបុត្រអង្គរអនឡាញ សម្រាប់ថ្ងៃពេញ"),
+         t("$37 for one day; it lets you in from 16:45 the afternoon before. Three days $62.", "1 วัน 37 ดอลลาร์ เข้าได้ตั้งแต่ 16:45 ของวันก่อน 3 วัน 62 ดอลลาร์", "1 ថ្ងៃ $37 ចូលបានពីម៉ោង 16:45 ល្ងាចមុន។ 3 ថ្ងៃ $62។"), [ANGKOR_TIX, ANGKOR]),
+    step(t("Within 3 days before flying home", "ภายใน 3 วันก่อนบินกลับ", "ក្នុង 3 ថ្ងៃមុនហោះត្រឡប់"), t("Thailand TDAC, free", "TDAC ประเทศไทย ฟรี", "TDAC ថៃ ឥតគិតថ្លៃ"),
+         t("tdac.immigration.go.th. A US passport gets 30 days back in, not 60.", "tdac.immigration.go.th พาสปอร์ตอเมริกาได้ 30 วัน ไม่ใช่ 60", "tdac.immigration.go.th។ លិខិតឆ្លងដែនអាមេរិកបាន 30 ថ្ងៃ មិនមែន 60។"), [TDAC, EXEMPT]),
+  ]),
+  dict(t="budget"),
+])
+
+BUDGET = dict(
+  meal_day=round(2 * 4.00 + 39.80 / 2, 2),   # two cheap meals + half a mid-range dinner for two (Numbeo, 9/2026)
+  evisa=30, angkor1=37, angkor3=62, kti=[10, 21], sai=8, sim=6, bus_sr=10, fly_sr=[52, 151], cnx=[120, 240],
+  src=dict(food=NUMBEO, fares=[CNX_FARES, PPSR_FARES], ground=[KTI_BUS, SAI, IBIS]),
+)

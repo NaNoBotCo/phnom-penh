@@ -12,7 +12,8 @@
    "icon": "i-lotus",
    "photo": "monks",
    "src": "https://www.nbc.gov.kh/english/news_and_events/official_holiday.php",
-   "line_km": "ឈប់សម្រាកបីថ្ងៃ។ គ្រួសារនាំបាយទៅវត្តមុនថ្ងៃរះ ដើម្បីឧទ្ទិសដល់ដូនតា។"
+   "line_km": "ឈប់សម្រាកបីថ្ងៃ។ គ្រួសារនាំបាយទៅវត្តមុនថ្ងៃរះ ដើម្បីឧទ្ទិសដល់ដូនតា។",
+   "anim": "smoke"
   },
   {
    "start": "2026-10-15",
@@ -25,7 +26,8 @@
    "icon": "i-flower",
    "photo": "sihanouk-memorial",
    "src": "https://www.nbc.gov.kh/english/news_and_events/official_holiday.php",
-   "line_km": "ថ្ងៃឈប់សម្រាកជាផ្លូវការ។"
+   "line_km": "ថ្ងៃឈប់សម្រាកជាផ្លូវការ។",
+   "anim": "candle"
   },
   {
    "start": "2026-10-29",
@@ -38,7 +40,8 @@
    "icon": "i-star",
    "photo": "royal-palace",
    "src": "https://www.nbc.gov.kh/english/news_and_events/official_holiday.php",
-   "line_km": "ថ្ងៃឈប់សម្រាកជាផ្លូវការ។"
+   "line_km": "ថ្ងៃឈប់សម្រាកជាផ្លូវការ។",
+   "anim": "twinkle"
   },
   {
    "start": "2026-11-09",
@@ -51,7 +54,8 @@
    "icon": "i-flag",
    "photo": "independence",
    "src": "https://www.nbc.gov.kh/english/news_and_events/official_holiday.php",
-   "line_km": "គេអុជភ្លើងនៅវិមានឯករាជ្យ។"
+   "line_km": "គេអុជភ្លើងនៅវិមានឯករាជ្យ។",
+   "anim": "flame"
   },
   {
    "start": "2026-11-23",
@@ -64,7 +68,8 @@
    "icon": "i-water",
    "photo": "water-festival-boats",
    "src": "https://www.akp.gov.kh/post/detail/374510",
-   "line_km": "ឈប់សម្រាកបីថ្ងៃ ពេលព្រះចន្ទពេញវង់ ពេលទន្លេប្ដូរទិស។ រដ្ឋាភិបាលបានផ្អាកពិធីបុណ្យនៅមុខព្រះបរមរាជវាំងក្នុងឆ្នាំ 2026 ប៉ុន្តែថ្ងៃឈប់សម្រាកនៅដដែល។"
+   "line_km": "ឈប់សម្រាកបីថ្ងៃ ពេលព្រះចន្ទពេញវង់ ពេលទន្លេប្ដូរទិស។ រដ្ឋាភិបាលបានផ្អាកពិធីបុណ្យនៅមុខព្រះបរមរាជវាំងក្នុងឆ្នាំ 2026 ប៉ុន្តែថ្ងៃឈប់សម្រាកនៅដដែល។",
+   "anim": "lanterns"
   },
   {
    "start": "2026-12-29",
@@ -77,7 +82,8 @@
    "icon": "i-leaf",
    "photo": "sunset-river",
    "src": "https://www.nbc.gov.kh/english/news_and_events/official_holiday.php",
-   "line_km": "ថ្ងៃឈប់សម្រាកជាផ្លូវការ។"
+   "line_km": "ថ្ងៃឈប់សម្រាកជាផ្លូវការ។",
+   "anim": "petals"
   }
  ]
 }

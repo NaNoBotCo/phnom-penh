@@ -480,6 +480,33 @@ a.shot .tx .dist{display:inline-block;margin-top:4px;font-size:.78rem;font-weigh
 .b-rows dd.b-tot{background:linear-gradient(100deg,var(--gold),var(--lotus),var(--gold));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-size:1.45rem}
 @media (prefers-reduced-motion:no-preference){.b-rows dd.b-tot{animation:shimmer 6s linear infinite}@keyframes shimmer{to{background-position:-200% 0}}}
 .tphoto img{box-shadow:var(--shadow)}
+/* home: magic */
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+.heromoon{position:absolute;top:64px;right:20px;width:64px;height:64px;filter:drop-shadow(0 0 18px rgba(255,236,190,.7));z-index:0}
+.heromoon svg{width:100%;height:100%}
+@media (min-width:900px){.heromoon{top:90px;right:12%;width:84px;height:84px}}
+@media (prefers-reduced-motion:no-preference){
+  .hero .ph{animation:kb 30s ease-in-out infinite alternate}
+  .wm{animation:shimmer 9s linear infinite}
+  .whereto::before{animation:turn 8s linear infinite}
+  @keyframes turn{to{--a:360deg}}
+  .heromoon{animation:float 7s ease-in-out infinite}
+  @keyframes float{50%{transform:translateY(-6px)}}
+  main .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  main .rv.in{opacity:1;transform:none}
+  .tiles .tile.rv{transform:translateY(12px) scale(.85)}
+  .tiles .tile.rv.in{transform:none}
+  .tiles .tile:nth-child(2){transition-delay:.04s}.tiles .tile:nth-child(3){transition-delay:.08s}.tiles .tile:nth-child(4){transition-delay:.12s}
+  .tiles .tile:nth-child(5){transition-delay:.16s}.tiles .tile:nth-child(6){transition-delay:.2s}.tiles .tile:nth-child(7){transition-delay:.24s}.tiles .tile:nth-child(8){transition-delay:.28s}
+  .tiles .tile:nth-child(9){transition-delay:.32s}.tiles .tile:nth-child(10){transition-delay:.36s}.tiles .tile:nth-child(11){transition-delay:.4s}.tiles .tile:nth-child(12){transition-delay:.44s}
+  .hscroll>.rv:nth-child(2){transition-delay:.07s}.hscroll>.rv:nth-child(3){transition-delay:.14s}.hscroll>.rv:nth-child(4){transition-delay:.21s}
+  .sh h2{position:relative}
+  .sh h2::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:64px;background:linear-gradient(90deg,var(--gold-hi),var(--lotus));transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.2,.7,.2,1) .2s}
+  .sh.in h2::after{transform:scaleX(1)}
+  .tile .sq::after{content:"";position:absolute;inset:-4px;border-radius:24px;border:1.5px solid color-mix(in srgb,var(--c) 60%,transparent);opacity:0;transition:opacity .4s}
+  .tile:hover .sq::after,.tile:focus-visible .sq::after{opacity:1}
+  .sky svg circle{animation:glow 3.2s ease-in-out infinite}
+}
 /* bands (site-kit) */
 .band{position:relative;isolation:isolate;margin:40px 0 20px;width:100%;min-height:clamp(300px,58vh,560px);display:grid;align-items:end;
   background-size:cover;background-position:center;background-attachment:fixed;background-color:#0d0b1f;color:#fff;text-decoration:none}
@@ -747,6 +774,7 @@ footer dd{margin:0;font-variant-numeric:tabular-nums;color:var(--ink)}
 <header class="hero" id="top">
   <div class="ph" id="heroph" role="img" aria-label=""></div>
   <canvas id="motes" aria-hidden="true"></canvas>
+  <div class="heromoon" id="heromoon" aria-hidden="true"></div>
   <div class="topbar">
     <a class="brand" href="#/"><i></i><span data-t="brand">Psar Phnom Penh</span></a>
     <div class="langs" role="group" aria-label="Language">
@@ -1096,6 +1124,9 @@ function paintClock(){
   var ph=$("heroph");
   if(ph.dataset.slug!==slug){ ph.dataset.slug=slug; ph.style.backgroundImage="url(img/"+slug+".jpg)"; ph.setAttribute("aria-label",CR[slug]?CR[slug].title.replace(/^File:|\.jpe?g$/gi,""):""); $("herocred").innerHTML=credit(slug); }
   paintSky(d,m,s,part);
+  document.body.dataset.part = part;
+  var hm2=$("heromoon"), mo=moon();
+  if(part==="night"||part==="dusk"){ hm2.innerHTML=moonSVG(mo.frac); hm2.title=moonWords(mo.age); hm2.hidden=false; } else hm2.hidden=true;
   return m;
 }
 function paintSky(d,m,s,part){
@@ -1118,9 +1149,14 @@ function motes(){
   function size(){ w=cv.clientWidth; h=cv.clientHeight; cv.width=w*dpr; cv.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
   size(); window.addEventListener("resize",size);
   for(var i=0;i<70;i++) P.push({x:Math.random(),y:Math.random(),r:Math.random()*1.8+.4,v:Math.random()*.00025+.00008,ph:Math.random()*6.28});
+  var STARS=[]; for(var k=0;k<90;k++) STARS.push({x:Math.random(),y:Math.random()*.5,r:Math.random()*1.1+.3,ph:Math.random()*6.28,sp:600+Math.random()*1400});
   var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function frame(t){
     ctx.clearRect(0,0,w,h);
+    var part=document.body.dataset.part;
+    if(part==="night"||part==="dusk"){ ctx.shadowBlur=0;
+      for(var j=0;j<STARS.length;j++){ var st=STARS[j], al=(part==="night"?.55:.3)+.4*Math.sin(t/st.sp+st.ph);
+        if(al<=0) continue; ctx.beginPath(); ctx.arc(st.x*w,st.y*h,st.r,0,6.283); ctx.fillStyle="rgba(235,240,255,"+al.toFixed(2)+")"; ctx.fill(); } }
     for(var i=0;i<P.length;i++){ var q=P[i];
       if(!still){ q.y-=q.v; q.x+=Math.sin(t/3000+q.ph)*.00012; if(q.y<-.02){ q.y=1.02; q.x=Math.random(); } }
       var a=.35+.35*Math.sin(t/900+q.ph);
@@ -1735,6 +1771,14 @@ $("whereform").onsubmit=function(e){ e.preventDefault(); var v=$("whereq").value
 function paintAll(){ var m=paintClock(); paintTiles(); paintNear(); paintHours(m); paintSoon(); paintGo(); paintPicks(); paintLoop(); paintBands(); paintFooter(); river(); }
 var riverOnce=river; river=function(){ paintRiverCap(); if(!river.done){ river.done=true; riverOnce(); } };
 setLang(LANG);
+/* home: things arrive as they scroll in */
+(function(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  var sel=".tile,.pc,.card,.ev,.golist>div,.pick,.stops li,.sh,.hours a.shot,#shelfrow a.shot,.loopmap,.nearbar";
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }); },{threshold:.1});
+  function arm(){ Array.prototype.forEach.call(document.querySelectorAll("main "+sel.split(",").join(",main ")),function(x){ if(!x.classList.contains("rv")){ x.classList.add("rv"); io.observe(x); } }); }
+  arm(); Array.prototype.forEach.call(document.querySelectorAll("main"),function(mn){ new MutationObserver(arm).observe(mn,{childList:true,subtree:true}); });
+})();
 motes();
 setInterval(function(){ var m=paintClock(); paintHours(m); }, 30000);
 route();

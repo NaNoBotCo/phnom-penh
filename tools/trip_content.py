@@ -128,6 +128,10 @@ STAY = dict(id="stay", icon="i-cal", photo="bayon", h=t("How long, and Siem Reap
   dict(t="p", **t("Our pick for a first trip from Chiang Mai: the half leg. It costs one domestic hop or a $10 bus, and saves the flight back through Phnom Penh.",
                   "ถ้ามาครั้งแรกจากเชียงใหม่ เราเลือกแบบครึ่งขา เพิ่มแค่เที่ยวบินในประเทศหรือรถบัส 10 ดอลลาร์ และไม่ต้องบินย้อนผ่านพนมเปญ",
                   "ការជ្រើសរើសរបស់យើងសម្រាប់ដំណើរដំបូងពីឈៀងម៉ៃ៖ ពាក់កណ្ដាលជើង។ ចំណាយតែជើងហោះក្នុងស្រុក ឬឡានក្រុង $10 ហើយមិនបាច់ហោះត្រឡប់តាមភ្នំពេញ។")),
+  dict(t="site", anchor="cambodia", h=t("Silk", "ผ้าไหม", "សូត្រ"),
+       p=t("The Institute for Khmer Traditional Textiles works from Siem Reap with Cambodia's golden silk. Nearer Phnom Penh, Takeo province is known for its silk, and Koh Dach, an island just upstream, keeps looms under the houses. Warp and Weft draws the weaving.",
+           "สถาบันสิ่งทอพื้นเมืองเขมรทำงานอยู่ที่เสียมราฐ กับไหมทองของกัมพูชา ใกล้พนมเปญ จังหวัดตาแก้วขึ้นชื่อเรื่องผ้าไหม ส่วนเกาะดาจ เกาะเหนือตัวเมืองขึ้นไปไม่ไกล มีกี่ทอผ้าอยู่ใต้ถุนบ้าน เส้นยืน เส้นพุ่ง วาดการทอให้ดู",
+           "វិទ្យាស្ថានវាយនភណ្ឌប្រពៃណីខ្មែរធ្វើការនៅសៀមរាប ជាមួយសូត្រមាសរបស់កម្ពុជា។ ជិតភ្នំពេញ ខេត្តតាកែវល្បីខាងសូត្រ ហើយកោះដាច់ ជាកោះខាងលើទីក្រុងបន្តិច មានកីត្បាញនៅក្រោមផ្ទះ។ អំបោះបញ្ឈរ អំបោះទទឹង គូរការត្បាញនេះ។")),
 ])
 
 EAT = dict(id="eat", icon="i-food", photo="amok", h=t("Picked", "ร้านที่เลือกไว้", "ជ្រើសរើស"), blocks=[dict(t="picks", ids=["dos-besos", "amaze-burger", "brooklyn-pizza", "arc"])])

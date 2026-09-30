@@ -7,6 +7,8 @@ beyond what an advertisement asks.
 """
 import json
 
+WW = "https://nanobotco.github.io/warp-and-weft/"
+
 
 def llms(boot, site):
     trip, n = boot["trip"], boot["n"]
@@ -85,11 +87,25 @@ def llms(boot, site):
                     unit = f" ({en(p['unit'])})" if p.get("unit") else ""
                     w(f"| {en(p['item'])}{unit} | ${p['pp']:,.2f} | ${p['cm']:,.2f} |")
                 w("")
+            elif b["t"] == "site":
+                w(f"**{en(b['h'])}**. {en(b['p'])} <{WW}#{b['anchor']}>")
+                w("")
             elif b["t"] == "picks":
                 for pk in trip["picks"]:
                     if pk["id"] in b["ids"]:
                         w(f"- **{pk['name']}**: {en(pk['what'])}. {en(pk.get('line'))} {pk['lat']}, {pk['lng']}".rstrip())
                 w("")
+    w("## Silk and weaving")
+    w("")
+    w(f"Warp and Weft · เส้นยืน เส้นพุ่ง · អំបោះបញ្ឈរ អំបោះទទឹង, a sister site by NaNoBotCo: {WW} (Thai {WW}th/, Khmer {WW}km/)")
+    w("")
+    w("Silk and weaving drawn by arithmetic. A loom weaves a Khmer silk hol shawl, one weft thread at a time: gold humped cattle and the woven Khmer word គោ, cow. Ikat tie-and-dye, a silkworm's cocoon, and the Silk Road map with Oc Eo and Angkor. Its Cambodia section covers sampot hol, pidan, golden silk and the Institute for Khmer Traditional Textiles in Siem Reap, Takeo, and the looms on Koh Dach.")
+    w("")
+    for a, what in [("shawl", "the shawl on the loom"), ("ikat", "ikat"), ("cambodia", "Cambodia: hol, pidan, golden silk, Takeo, Koh Dach"),
+                    ("worm", "the silkworm"), ("road", "the Silk Road"), ("draw", "draw a pattern with math")]:
+        w(f"- {what}: {WW}#{a}")
+    w(f"- Share card: {WW}card.jpg")
+    w("")
     w("## Licence and data")
     w("")
     w("Text: CC BY 4.0, credit NaNoBotCo. Places: Overture Maps Foundation, CDLA-Permissive-2.0. Map layers: © OpenStreetMap contributors, ODbL. Photographs: Wikimedia Commons, each under its own licence, credited on the page.")
@@ -123,4 +139,7 @@ def jsonld(boot, site):
         if pk.get("fb"):
             o["sameAs"] = "https://www.facebook.com/" + pk["fb"]
         g.append(o)
+    g.append({"@type": "WebSite", "url": WW, "name": "Warp and Weft", "alternateName": ["เส้นยืน เส้นพุ่ง", "អំបោះបញ្ឈរ អំបោះទទឹង"],
+              "inLanguage": ["en", "th", "km"], "image": WW + "card.jpg", "about": "Silk and weaving, Khmer silk hol, ikat, the Silk Road",
+              "publisher": {"@type": "Organization", "name": "NaNoBotCo", "url": "https://github.com/NaNoBotCo"}})
     return json.dumps({"@context": "https://schema.org", "@graph": g}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")

@@ -30,6 +30,7 @@
   --water:#bcd7ea; --park:#cfe6c4; --watg:#f3dca0; --road:#ddd3c1; --road2:#c9bca4; --street:#e6ddcc;
   --shadow:0 1px 2px rgba(27,21,48,.06),0 8px 28px rgba(27,21,48,.08);
   --r:18px;
+  --wwgold:#7a5207;
   --khmer:"Kantumruy Pro",system-ui,sans-serif;
   --body:"Kantumruy Pro","Noto Sans Thai",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --serif:"Cormorant Garamond","Noto Sans Thai",Georgia,serif;
@@ -42,6 +43,7 @@
   --gold:#f0c05a; --gold-hi:#ffd98a; --lotus:#ff6b9a; --indigo:#8f86ff; --jade:#2fd394; --jade-ink:#062a1c;
   --water:#123353; --park:#15321f; --watg:#3a2f14; --road:#342e60; --road2:#4a4282; --street:#241f47;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+  --wwgold:#f0c05a;
   color-scheme:dark;
 }}
 *{box-sizing:border-box}
@@ -172,6 +174,23 @@ a.shot .tx .dist{display:inline-block;margin-top:4px;font-size:.78rem;font-weigh
 .cred{display:block;font-size:.66rem;color:var(--faint);margin-top:3px;line-height:1.35}
 .cred a{color:inherit}
 .golist{grid-auto-columns:min(72%,300px)}
+
+/* silk: Warp and Weft, a sister site */
+.ww{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.ww .wwimg{display:flex;align-items:center;background:#241a14}
+.ww .wwimg img{display:block;width:100%;height:auto;aspect-ratio:1200/630}
+.ww .wwtx{min-width:0;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.ww .wwtx h3{font-family:var(--serif);font-size:1.7rem;line-height:1.1;margin:0}
+.ww .wwtx h3 a{color:inherit;text-decoration:none}
+.ww .wwalt{color:var(--wwgold);font-size:.95rem;margin:0}
+.ww .wwtx p{margin:0;max-width:52ch}
+.wwchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.wwchips .pill{min-height:36px;padding:5px 12px;font-size:.86rem}
+@media (max-width:720px){.ww{grid-template-columns:minmax(0,1fr)}}
+.wwmini{display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:var(--shadow);text-decoration:none;color:inherit;margin:8px 0 14px;max-width:620px}
+.wwmini img{width:120px;aspect-ratio:1200/630;object-fit:cover;border-radius:10px;display:block}
+.wwmini b{display:block;font-family:var(--serif);font-size:1.15rem}
+.wwmini span{font-size:.9rem;color:var(--muted)}
 
 /* soon */
 .soon{display:grid;gap:12px}
@@ -589,6 +608,12 @@ footer dd{margin:0;font-variant-numeric:tabular-nums;color:var(--ink)}
       <ol class="stops" id="stops"></ol>
     </div>
   </section>
+
+  <div class="kbach" aria-hidden="true"></div>
+  <section class="sec" id="silk" aria-labelledby="silk-h">
+    <div class="sh"><h2 id="silk-h"><span data-t="silk">Silk</span><small data-t="wwKicker">silk, drawn by arithmetic</small></h2></div>
+    <div id="silkcard"></div>
+  </section>
 </main>
 
 <a class="band" id="band2" href="#/s/food"></a>
@@ -603,6 +628,8 @@ footer dd{margin:0;font-variant-numeric:tabular-nums;color:var(--ink)}
     <p id="src2"></p>
     <h3 data-t="grabH">Grab</h3>
     <p id="grabnote"></p>
+    <h3 data-t="silk">Silk</h3>
+    <p id="wwfoot"></p>
     <h3 data-t="photos">Photographs</h3>
     <div class="credits" id="credits"></div>
   </div>
@@ -699,7 +726,18 @@ var W = {
             "มิถุนายนถึงตุลาคม น้ำโขงหนุนโตนเลสาบขึ้นไปสู่ทะเลสาบ พฤศจิกายนจึงไหลกลับ ภาพนี้วาดตามฤดู ไม่ใช่ค่าวัดจริง",
             "ពីខែមិថុនាដល់តុលា ទឹកមេគង្គហូរឡើងតាមទន្លេសាបចូលបឹង ហើយខែវិច្ឆិកាវាហូរត្រឡប់វិញ។ គូរតាមរដូវ មិនមែនតាមការវាស់ទេ។"],
  nearGps:["from your phone's position","จากตำแหน่งโทรศัพท์","ពីទីតាំងទូរស័ព្ទរបស់អ្នក"],
- picks:["Picked","ร้านที่เลือกไว้","ជ្រើសរើស"]
+ picks:["Picked","ร้านที่เลือกไว้","ជ្រើសរើស"],
+ silk:["Silk","ผ้าไหม","សូត្រ"],
+ wwKicker:["silk, drawn by arithmetic","ผ้าไหม วาดด้วยเลขคณิต","សូត្រ គូរដោយលេខនព្វន្ត"],
+ wwLine:["A loom weaves a Khmer silk hol shawl one weft thread at a time: gold humped cattle, and the woven Khmer word គោ, cow. Then ikat, the silkworm's cocoon, and the Silk Road map with Oc Eo and Angkor.",
+         "กี่ทอผ้าโฮลไหมเขมรทีละเส้นพุ่ง วัวมีหนอกสีทอง และคำเขมร គោ ที่แปลว่าวัว ทอไว้ในผ้า ต่อด้วยมัดหมี่ รังไหม และแผนที่เส้นทางสายไหมที่มีออกแอวกับนครธม",
+         "កីត្បាញកន្សែងហូលសូត្រខ្មែរ ម្ដងមួយសរសៃអំបោះទទឹង៖ គោមានបូកពណ៌មាស និងពាក្យ គោ ដែលត្បាញក្នុងក្រណាត់។ បន្ទាប់មក ចងជ្រលក់ សំបុកដង្កូវនាង និងផែនទីផ្លូវសូត្រ ដែលមានអូរកែវ និងអង្គរ។"],
+ wwCam:["Khmer silk: sampot hol, pidan, golden silk, and the looms of Takeo and Koh Dach.",
+        "ผ้าไหมเขมร สมปตโฮล ปิดาน ไหมทอง และกี่ทอผ้าที่ตาแก้วกับเกาะดาจ",
+        "សូត្រខ្មែរ៖ សំពត់ហូល ពិដាន សូត្រមាស និងកីត្បាញនៅតាកែវ និងកោះដាច់។"],
+ wwFoot:["silk and weaving drawn by arithmetic, in English, Thai and Khmer. Also by NaNoBotCo.",
+         "ผ้าไหมและการทอ วาดด้วยเลขคณิต ภาษาอังกฤษ ไทย และเขมร จาก NaNoBotCo เหมือนกัน",
+         "សូត្រ និងការត្បាញ គូរដោយលេខនព្វន្ត ជាភាសាអង់គ្លេស ថៃ និងខ្មែរ។ ពី NaNoBotCo ដូចគ្នា។"]
 };
 var LANG = store("lang") || "en", LI = {en:0,th:1,km:2};
 function T(k,n){ var v = W[k] ? W[k][LI[LANG]] : k; return n!==undefined ? v.replace("{n}",n) : v; }
@@ -1081,6 +1119,30 @@ function paintBands(){
     return shot("#/s/"+s.id, s.photo, nm(s), s.n.toLocaleString("en")+" "+T("places").toLowerCase(), "", "80%");
   }).join("");
 }
+/* ---------- silk: Warp and Weft, a sister site in the same three languages ---------- */
+var WW = {
+ base:["https://nanobotco.github.io/warp-and-weft/","https://nanobotco.github.io/warp-and-weft/th/","https://nanobotco.github.io/warp-and-weft/km/"],
+ name:["Warp and Weft","เส้นยืน เส้นพุ่ง","អំបោះបញ្ឈរ អំបោះទទឹង"],
+ chips:[["shawl",["Shawl","ผ้าคลุมไหล่","កន្សែង"]],["ikat",["Ikat","มัดหมี่","ចងជ្រលក់"]],["cambodia",["Cambodia","กัมพูชา","កម្ពុជា"]],
+        ["worm",["Silkworm","หนอนไหม","ដង្កូវនាង"]],["road",["Silk Road","เส้นทางสายไหม","ផ្លូវសូត្រ"]],["draw",["Draw","วาด","គូរ"]]],
+ lm:{"russian-market":1,"central-market":1},
+ rx:/silk|weav|\bhol\b|ikat|ไหม|ทอผ้า|มัดหมี่|សូត្រ|ត្បាញ|ហូល/i
+};
+function wwURL(a){ return WW.base[LI[LANG]]+(a?"#"+a:""); }
+function wwName(){ return WW.name[LI[LANG]]; }
+function wwOthers(){ return WW.name.filter(function(_,i){ return i!==LI[LANG]; }).join(" · "); }
+function wwMini(anchor, line){
+  return '<a class="wwmini" href="'+wwURL(anchor)+'" target="_blank" rel="noopener"><img src="img/t/warp-and-weft.jpg" alt="" loading="lazy">'+
+    '<span><b>'+esc(wwName())+'</b><span>'+esc(line)+'</span></span></a>';
+}
+function paintSilk(){
+  $("silkcard").innerHTML = '<div class="ww"><a class="wwimg" href="'+wwURL("shawl")+'" target="_blank" rel="noopener" aria-label="'+esc(wwName())+'">'+
+    '<img src="img/warp-and-weft.jpg" alt="" loading="lazy"></a><div class="wwtx">'+
+    '<h3><a href="'+wwURL()+'" target="_blank" rel="noopener">'+esc(wwName())+'</a></h3><p class="wwalt">'+esc(wwOthers())+'</p>'+
+    '<p>'+esc(T("wwLine"))+'</p><p style="color:var(--muted)">'+esc(T("wwCam"))+'</p>'+
+    '<div class="wwchips">'+WW.chips.map(function(c){ return '<a class="pill" href="'+wwURL(c[0])+'" target="_blank" rel="noopener">'+esc(c[1][LI[LANG]])+'</a>'; }).join("")+'</div></div></div>';
+  $("wwfoot").innerHTML = '<a href="'+wwURL()+'" target="_blank" rel="noopener">'+esc(wwName())+'</a> · '+esc(wwOthers())+': '+esc(T("wwFoot"));
+}
 function paintFooter(){
   var kh=0,ph=0,di=0,cf=0,sh=0, KHRE=/[ក-៿]/;
   for(var r=0;r<N;r++){ if(KHRE.test(rowF(r)[0])) kh++; if(flag[r]&1) ph++; if(khan[r]>=0) di++; if(conf[r]>=50) cf++; if(shelf[r]>=0) sh++; }
@@ -1112,7 +1174,7 @@ function openList(id, q){
     '<div class="in"><span class="kicker" style="color:#ffe3a3">'+(s?ico(s.icon):"")+'</span><h2 id="lp-t">'+esc(title)+'</h2>'+
     (s? '<span class="k">'+esc(LANG==="km"?s.en:s.km)+'</span>':"")+(slug?'<span class="cred">'+credit(slug)+'</span>':"")+'</div></div>'+
     '<div class="wrap"><div class="ltools" id="ltools"></div>'+(id==="food"?'<p><a class="pill" href="'+GRAB.food+'" target="_blank" rel="noopener">'+ico("i-food")+esc(T("grabFood"))+'</a></p>':"")+
-    '<p class="count" id="lcount"></p><ul class="rows" id="lrows"></ul><button class="showmore" id="lmore">'+esc(T("showMore"))+'</button><div class="empty" id="lempty" hidden></div></div>';
+    '<div id="lsilk"></div><p class="count" id="lcount"></p><ul class="rows" id="lrows"></ul><button class="showmore" id="lmore">'+esc(T("showMore"))+'</button><div class="empty" id="lempty" hidden></div></div>';
   openPanel(el);
   var t=null; $("lq").oninput=function(e){ clearTimeout(t); var v=e.target.value; t=setTimeout(function(){ LS.q=v.trim(); LS.shown=60; runList(); },140); };
   $("lmore").onclick=function(){ LS.shown+=60; paintRows(); };
@@ -1133,6 +1195,7 @@ function runList(){
   else if(LS.q){ var q=LS.q.toLowerCase().split(/\s+/)[0]; out.sort(function(a,b){ var x=rowF(a)[0].toLowerCase().indexOf(q), y=rowF(b)[0].toLowerCase().indexOf(q); x=x===0?3:x>0?2:1; y=y===0?3:y>0?2:1; return (y-x)||(conf[b]-conf[a]); }); }
   else out.sort(function(a,b){ return conf[b]-conf[a]; });
   LS.list=out;
+  $("lsilk").innerHTML = (LS.id==="shop" || WW.rx.test(LS.q)) ? wwMini("cambodia", T("wwCam")) : "";
   var ks=Object.keys(kc).map(Number).sort(function(a,b){ return kc[b]-kc[a]; });
   $("ltools").innerHTML =
     (ME?'<button class="pill" id="ls-sort" aria-pressed="'+(LS.sort==="near")+'">'+ico("i-near")+esc(T("sortNear"))+'</button>':"")+
@@ -1194,7 +1257,8 @@ function openLandmark(id){
     '<div class="lmbody"><p class="txt">'+esc(lmText(l))+'</p><p class="txt2">'+esc(LANG==="en"?l.t_th:l.t_en)+'</p>'+
     '<div class="acts" style="display:flex;gap:8px;flex-wrap:wrap;margin:16px 0">'+rideBtn(l.lat,l.lng,l.en,true)+
     '<a class="pill" href="#/map/@'+l.lat+','+l.lng+'">'+ico("i-map")+esc(T("map"))+'</a>'+
-    (l.q?'<a class="pill" href="https://www.wikidata.org/wiki/'+l.q+'" target="_blank" rel="noopener">'+ico("i-book")+'Wikidata</a>':"")+'</div>'+nb+'</div>';
+    (l.q?'<a class="pill" href="https://www.wikidata.org/wiki/'+l.q+'" target="_blank" rel="noopener">'+ico("i-book")+'Wikidata</a>':"")+'</div>'+
+    (WW.lm[l.id]?'<div class="rowhead" style="--c:var(--wwgold)">'+ico("i-shop")+'<span>'+esc(T("silk"))+'</span></div>'+wwMini("cambodia", T("wwCam")):"")+nb+'</div>';
   openPanel(el);
 }
 
@@ -1289,6 +1353,7 @@ function block(b){
   if(b.t==="budget") return budgetHTML();
   if(b.t==="region") return '<div class="regionwrap">'+document.getElementById("regiontpl").innerHTML+'</div>';
   if(b.t==="picks") return '<div class="hscroll golist">'+b.ids.map(function(id){ return pickCard(TRIP.picks.filter(function(x){ return x.id===id; })[0]); }).join("")+'</div>';
+  if(b.t==="site") return '<h3>'+esc(L3(b.h))+'</h3><p>'+esc(L3(b.p))+'</p>'+wwMini(b.anchor, T("wwCam"));
   if(b.t==="ride") return '<p>'+rideBtn(b.lat,b.lng,b.name,true)+'</p>';
   if(b.t==="photo") return '<figure class="tphoto"><img src="img/'+b.slug+'.jpg" alt="" loading="lazy"><figcaption>'+esc(L3(b))+' · '+credit(b.slug)+'</figcaption></figure>';
   return "";
@@ -1503,7 +1568,7 @@ function setLang(l){
 Array.prototype.forEach.call(document.querySelectorAll(".langs button"),function(b){ b.onclick=function(){ setLang(b.dataset.lang); }; });
 $("whereform").onsubmit=function(e){ e.preventDefault(); var v=$("whereq").value.trim(); location.hash = v ? "#/q/"+encodeURIComponent(v) : "#/s/all"; };
 
-function paintAll(){ var m=paintClock(); paintTiles(); paintNear(); paintHours(m); paintSoon(); paintGo(); paintPicks(); paintLoop(); paintBands(); paintFooter(); river(); }
+function paintAll(){ var m=paintClock(); paintTiles(); paintNear(); paintHours(m); paintSoon(); paintGo(); paintPicks(); paintLoop(); paintBands(); paintSilk(); paintFooter(); river(); }
 var riverOnce=river; river=function(){ paintRiverCap(); if(!river.done){ river.done=true; riverOnce(); } };
 setLang(LANG);
 /* home: things arrive as they scroll in */

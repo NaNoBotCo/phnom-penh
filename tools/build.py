@@ -93,6 +93,10 @@ def photos():
         im = Image.open(f).convert("RGB")
         a = im.copy(); a.thumbnail((1600, 1600)); a.save(big, quality=72, optimize=True, progressive=True)
         b = im.copy(); b.thumbnail((560, 560)); b.save(small, quality=70, optimize=True, progressive=True)
+    # Warp and Weft's share card, for the silk links (a sister site; not a Commons photo, so no credit row)
+    ww = ROOT / "data" / "silk" / "warp-and-weft.jpg"
+    shutil.copyfile(ww, out / "warp-and-weft.jpg")
+    t = Image.open(ww).convert("RGB"); t.thumbnail((560, 560)); t.save(out / "t" / "warp-and-weft.jpg", quality=72, optimize=True, progressive=True)
     for c in credits.values():
         c["author"] = re.sub(r"\s+", " ", c["author"]).strip()
         c.pop("desc", None)

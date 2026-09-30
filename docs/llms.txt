@@ -88,6 +88,8 @@ Siem Reap flies straight to Bangkok: Bangkok Airways three times a day (07:40, 1
 
 Our pick for a first trip from Chiang Mai: the half leg. It costs one domestic hop or a $10 bus, and saves the flight back through Phnom Penh.
 
+**Silk**. The Institute for Khmer Traditional Textiles works from Siem Reap with Cambodia's golden silk. Nearer Phnom Penh, Takeo province is known for its silk, and Koh Dach, an island just upstream, keeps looms under the houses. Warp and Weft draws the weaving. <https://nanobotco.github.io/warp-and-weft/#cambodia>
+
 ### Prices: Phnom Penh and Chiang Mai
 
 Phnom Penh prices in dollars, Chiang Mai in baht, both turned into one currency at the 29 September rate ($1 = ฿33.57 = 4,056 riel). Food and rent come from Numbeo, which people fill in themselves. <https://www.nbc.gov.kh/english/economic_research/exchange_rate.php> <https://api.frankfurter.dev/v1/latest?base=USD&symbols=THB> <https://www.numbeo.com/cost-of-living/in/Phnom-Penh> <https://www.numbeo.com/cost-of-living/in/Chiang-Mai>
@@ -172,6 +174,20 @@ What an expensive room cannot change: cold does not kill hepatitis A in an oyste
 - **Amaze Burger**: Burgers · same address as Dos Besos, #13 Street 105B.  11.53709, 104.90694
 - **Brooklyn Pizza and Bistro**: Pizza · Street 123, by the Russian Market.  11.54121, 104.91733
 - **ARC Start-up Accelerator**: Start-ups · AUPP Technology Center, 4th floor, Km 6. Zia Bharwani's accelerator, co-founded with ChainsAtlas at the American University of Phnom Penh: three months of mentoring for Cambodian start-ups, for 5% equity. 11.61593, 104.90117
+
+## Silk and weaving
+
+Warp and Weft · เส้นยืน เส้นพุ่ง · អំបោះបញ្ឈរ អំបោះទទឹង, a sister site by NaNoBotCo: https://nanobotco.github.io/warp-and-weft/ (Thai https://nanobotco.github.io/warp-and-weft/th/, Khmer https://nanobotco.github.io/warp-and-weft/km/)
+
+Silk and weaving drawn by arithmetic. A loom weaves a Khmer silk hol shawl, one weft thread at a time: gold humped cattle and the woven Khmer word គោ, cow. Ikat tie-and-dye, a silkworm's cocoon, and the Silk Road map with Oc Eo and Angkor. Its Cambodia section covers sampot hol, pidan, golden silk and the Institute for Khmer Traditional Textiles in Siem Reap, Takeo, and the looms on Koh Dach.
+
+- the shawl on the loom: https://nanobotco.github.io/warp-and-weft/#shawl
+- ikat: https://nanobotco.github.io/warp-and-weft/#ikat
+- Cambodia: hol, pidan, golden silk, Takeo, Koh Dach: https://nanobotco.github.io/warp-and-weft/#cambodia
+- the silkworm: https://nanobotco.github.io/warp-and-weft/#worm
+- the Silk Road: https://nanobotco.github.io/warp-and-weft/#road
+- draw a pattern with math: https://nanobotco.github.io/warp-and-weft/#draw
+- Share card: https://nanobotco.github.io/warp-and-weft/card.jpg
 
 ## Licence and data
 

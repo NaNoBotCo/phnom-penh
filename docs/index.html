@@ -1549,7 +1549,7 @@ function paintPicks(){
 
 /* ---------- the to-do list and the cost of the trip ---------- */
 function stepsHTML(b){
-  return '<ol class="steps">'+b.steps.map(function(st){ return '<li><span class="st-when">'+esc(L3(st.when))+'</span><b>'+esc(L3(st.what))+'</b><p>'+esc(L3(st.how))+(st.src?srcLink(st.src):"")+'</p></li>'; }).join("")+'</ol>';
+  return '<ol class="steps">'+b.steps.map(function(st){ return '<li><span class="st-when">'+esc(L3(st.when))+'</span><b>'+esc(L3(st.what))+'</b><p>'+esc(L3(st.how))+(st.src?srcLink(st.src):"")+paidLink(st.paid)+'</p></li>'; }).join("")+'</ol>';
 }
 var BW = {
  h:["What it costs","ค่าใช้จ่าย","ចំណាយ"], pass:["Passport","พาสปอร์ต","លិខិតឆ្លងដែន"], us:["Needs a visa","ต้องมีวีซ่า","ត្រូវការទិដ្ឋាការ"], thai:["Thai","ไทย","ថៃ"],
@@ -1611,7 +1611,7 @@ function priceTable(){
 function block(b){
   if(b.t==="p") return '<p>'+esc(L3(b))+(b.src?srcLink(b.src):"")+'</p>';
   if(b.t==="h") return '<h3>'+esc(L3(b))+'</h3>';
-  if(b.t==="facts") return '<dl class="facts">'+b.rows.map(function(r){ return '<dt>'+esc(L3(r.k))+'</dt><dd>'+esc(L3(r.v))+(r.src?srcLink(r.src):"")+'</dd>'; }).join("")+'</dl>';
+  if(b.t==="facts") return '<dl class="facts">'+b.rows.map(function(r){ return '<dt>'+esc(L3(r.k))+'</dt><dd>'+esc(L3(r.v))+(r.src?srcLink(r.src):"")+paidLink(r.paid)+'</dd>'; }).join("")+'</dl>';
   if(b.t==="cards") return '<div class="tcards">'+b.cards.map(function(c){ return '<div class="tcard'+(c.hot?" hot":"")+'"><span class="tc-k">'+esc(L3(c.k))+'</span><b>'+esc(L3(c.h))+'</b><p>'+esc(L3(c.p))+'</p>'+(c.src?srcLink(c.src):"")+'</div>'; }).join("")+'</div>';
   if(b.t==="prices") return priceTable();
   if(b.t==="steps") return stepsHTML(b);
@@ -1623,6 +1623,7 @@ function block(b){
   if(b.t==="photo") return '<figure class="tphoto"><img src="img/'+b.slug+'.jpg" alt="" loading="lazy"><figcaption>'+esc(L3(b))+' · '+credit(b.slug)+'</figcaption></figure>';
   return "";
 }
+function paidLink(p){ return p ? ' <a href="'+esc(p.url)+'" rel="sponsored nofollow noopener" target="_blank">'+esc(L3(p))+'</a> <small class="src">'+esc(L3(p.label))+'</small>' : ""; }
 function srcLink(u){ var list = Array.isArray(u)?u:[u]; return ' <span class="src">'+esc(T("source"))+' '+list.map(function(x,i){ return '<a class="src" href="'+esc(x)+'" target="_blank" rel="noopener">'+(i+1)+'</a>'; }).join(" ")+'</span>'; }
 function journeySVG(){
   var stops=[["CNX",{en:"Chiang Mai",th:"เชียงใหม่",km:"ឈៀងម៉ៃ"}],["BKK",{en:"Bangkok",th:"กรุงเทพฯ",km:"បាងកក"}],["KTI",{en:"Phnom Penh",th:"พนมเปญ",km:"ភ្នំពេញ"}],["SAI",{en:"Siem Reap",th:"เสียมราฐ",km:"សៀមរាប"}],["BKK",{en:"Bangkok",th:"กรุงเทพฯ",km:"បាងកក"}]];

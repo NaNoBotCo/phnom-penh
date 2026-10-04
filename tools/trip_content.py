@@ -83,11 +83,11 @@ AIR = dict(id="air", icon="i-plane", photo="skyline", h=t("The airport", "สน
   dict(t="facts", rows=[
     dict(k=t("Airport bus", "รถบัสสนามบิน", "ឡានក្រុងព្រលាន"), v=t("05:30–23:30 daily, via the railway station (Canadia Garden) and Monivong Blvd. Fare reported as 1,500 riel.",
           "ทุกวัน 05:30–23:30 ผ่านสถานีรถไฟและถนนมุนีวงศ์ ค่าโดยสารราว 1,500 เรียล", "រៀងរាល់ថ្ងៃ 05:30–23:30 តាមស្ថានីយ៍រថភ្លើង និងមហាវិថីព្រះមុនីវង្ស។ តម្លៃប្រហែល 1,500 រៀល។"), src=KTI_BUS),
-    dict(k=t("Grab or taxi", "Grab หรือแท็กซี่", "Grab ឬតាក់ស៊ី"), v=t("About $10–21 to the centre, 30–60 minutes by traffic.", "ราว 10–21 ดอลลาร์ถึงใจกลางเมือง 30–60 นาที แล้วแต่รถติด", "ប្រហែល $10–21 ទៅកណ្ដាលក្រុង 30–60 នាទី អាស្រ័យលើចរាចរណ៍។"), src="https://cambopedia.com/how-to-get-from-techo-international-airport-to-phnom-penh/"),
-    dict(k=t("On landing", "ลงเครื่องแล้ว", "ពេលចុះ"), v=t("SIM counters (Cellcard, Smart, Metfone) after baggage; bank ATMs in arrivals. Dollars work everywhere; riel is the change.",
+    dict(slot="pp-airport", k=t("Grab or taxi", "Grab หรือแท็กซี่", "Grab ឬតាក់ស៊ី"), v=t("About $10–21 to the centre, 30–60 minutes by traffic.", "ราว 10–21 ดอลลาร์ถึงใจกลางเมือง 30–60 นาที แล้วแต่รถติด", "ប្រហែល $10–21 ទៅកណ្ដាលក្រុង 30–60 នាទី អាស្រ័យលើចរាចរណ៍។"), src="https://cambopedia.com/how-to-get-from-techo-international-airport-to-phnom-penh/"),
+    dict(slot="pp-esim", k=t("On landing", "ลงเครื่องแล้ว", "ពេលចុះ"), v=t("SIM counters (Cellcard, Smart, Metfone) after baggage; bank ATMs in arrivals. Dollars work everywhere; riel is the change.",
           "เคาน์เตอร์ซิม (Cellcard, Smart, Metfone) หลังรับกระเป๋า มีตู้ ATM ที่ขาเข้า ใช้ดอลลาร์ได้ทุกที่ ทอนเป็นเรียล",
           "តូបស៊ីម (Cellcard, Smart, Metfone) ក្រោយយកឥវ៉ាន់ និង ATM នៅច្រកមកដល់។ ប្រើដុល្លារបានគ្រប់កន្លែង ប្រាក់អាប់ជារៀល។"), src=WING),
-    dict(k=t("Siem Reap (SAI)", "เสียมราฐ (SAI)", "សៀមរាប (SAI)"), v=t("Also new (2023), about 50 km from town. Shuttle $8, car $35.", "ใหม่เหมือนกัน (2566) ห่างเมืองราว 50 กม. รถรับส่ง 8 ดอลลาร์ รถเหมา 35 ดอลลาร์", "ថ្មីដូចគ្នា (2023) ប្រហែល 50 គ.ម ពីទីក្រុង។ ឡានដឹក $8 ឡានឯកជន $35។"), src=SAI),
+    dict(slot="pp-sai", k=t("Siem Reap (SAI)", "เสียมราฐ (SAI)", "សៀមរាប (SAI)"), v=t("Also new (2023), about 50 km from town. Shuttle $8, car $35.", "ใหม่เหมือนกัน (2566) ห่างเมืองราว 50 กม. รถรับส่ง 8 ดอลลาร์ รถเหมา 35 ดอลลาร์", "ថ្មីដូចគ្នា (2023) ប្រហែល 50 គ.ម ពីទីក្រុង។ ឡានដឹក $8 ឡានឯកជន $35។"), src=SAI),
   ]),
   dict(t="ride", lat=11.362917, lng=104.916611, name="Techo International Airport"),
 ])
@@ -365,6 +365,10 @@ TODO = dict(id="todo", icon="i-check", photo="tuk-tuk", h=t("Do this", "ต้�
   ]),
   dict(t="budget"),
 ])
+
+# paid links (affiliate-slots registry): the step whose "when" matches carries the slot
+for _st in TODO["blocks"][0]["steps"]:
+    _st["slot"] = {"Book": "pp-flights", "Day before Angkor": "pp-angkor"}.get(_st["when"]["en"])
 
 BUDGET = dict(
   meal_day=round(2 * 4.00 + 39.80 / 2, 2),   # two cheap meals + half a mid-range dinner for two (Numbeo, 9/2026)

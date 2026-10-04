@@ -72,7 +72,7 @@ VISA = dict(id="visa", icon="i-document", photo="independence", h=t("Visas", "�
                   "อยู่กัมพูชานานขึ้น วีซ่าท่องเที่ยวต่อได้ครั้งเดียว 1 เดือน วีซ่าธุรกิจ (E) ต่อได้ถึง 1 ปี อยู่เกินวันละ 10 ดอลลาร์",
                   "ស្នាក់នៅយូរជាងនេះ៖ ទិដ្ឋាការទេសចរណ៍បន្តបានម្ដង 1 ខែ។ ទិដ្ឋាការអាជីវកម្ម (E) បន្តបានដល់ 1 ឆ្នាំ។ ស្នាក់លើស $10 ក្នុងមួយថ្ងៃ។", src=TOURISM)),
   dict(t="p", **t("The US Embassy asks travellers to stay more than 50 km from the Thai–Cambodian border. Phnom Penh and Siem Reap town are well outside it.",
-                  "สถานทูตสหรัฐฯ แนะนำให้อยู่ห่างแนวชายแดนไทย–กัมพูชาเกิน 50 กม. พนมเปญและตัวเมืองเสียมราฐอยู่นอกระยะนั้น",
+                  "สถานทูตสหรัฐฯ แนะนำให้อยู่ห่างแนวชายแดนไทย–กัมพูชาเกิน 50 กม. พนมเปญและตัวเมืองเสียมราฐอยู่นอกระยะนั้น",  # stylecheck: allow — the US Embassy's advisory, reported
                   "ស្ថានទូតអាមេរិកស្នើឱ្យនៅឆ្ងាយពីព្រំដែនថៃ–កម្ពុជាលើសពី 50 គ.ម។ ភ្នំពេញ និងទីក្រុងសៀមរាបនៅក្រៅចម្ងាយនោះ។", src=ADVISORY)),
 ])
 
@@ -306,7 +306,7 @@ AUEMB = "https://cambodia.embassy.gov.au/penh/MedicalServiceProviders.html"
 SDC = "https://www.sittiporndental.com/en/prices/"
 KITCHA = "https://www.kitchadentalclinic.com/prices/"
 COUNCIL = "https://data.opendevelopmentcambodia.net/laws_record/royal-decree-on-the-establishment-of-dental-council"
-CDAILY = "https://english.cambodiadaily.com/2008/06/18/dentists-must-register-or-risk-closure-govt/"
+CDAILY = "https://english.cambodiadaily.com/2008/06/18/dentists-must-register-or-risk-closure-govt/"  # stylecheck: allow — a URL
 CDC_V = "https://www.cdc.gov/vibrio/prevention/index.html"
 FSANZ = "https://www.foodstandards.gov.au/sites/default/files/2023-11/Bivalve%20molluscs%20and%20Hepatitis%20A.pdf"
 TOPAZ = "https://www.cambodgemag.com/en/post/topaz-brings-marennes-ol%C3%A9ron-oysters-to-norodom-boulevard"
@@ -320,7 +320,7 @@ HEALTH = dict(id="teeth", icon="i-health", photo="riverside", h=t("Teeth and oys
                   "មានអ្នកជំងឺហោះមក ភាគច្រើនពីអូស្ត្រាលី ជប៉ុន សិង្ហបុរី។ ពីឈៀងម៉ៃ ការសន្សំស្ទើរតែគ្មាន៖ សម្អាត បំពេញ ព្យាបាលឫស តម្លៃប្រហាក់ប្រហែល ក្រោនហ្ស៊ីកូនៀថោកជាងនៅឈៀងម៉ៃ ហើយឫសធ្មេញសិប្បនិម្មិតម៉ាកល្អ តម្លៃជិតគ្នា។", src=[ROOMCHANG, SDC, KITCHA])),
   dict(t="facts", rows=[
     dict(k=t("Crown", "ครอบฟัน", "ក្រោន"), v=t("Phnom Penh $512–600 · Chiang Mai zirconia from $357", "พนมเปญ 512–600 ดอลลาร์ · เชียงใหม่ เซอร์โคเนีย เริ่ม 357 ดอลลาร์", "ភ្នំពេញ $512–600 · ឈៀងម៉ៃ ហ្ស៊ីកូនៀ ចាប់ពី $357"), src=[ROOMCHANG, SDC]),
-    dict(k=t("Implant with crown", "รากเทียมพร้อมครอบ", "ឫសសិប្បនិម្មិត និងក្រោន"), v=t("Phnom Penh about $2,400 · Chiang Mai $1,220–2,232 by brand. Ask for the price in writing.", "พนมเปญราว 2,400 ดอลลาร์ · เชียงใหม่ 1,220–2,232 ดอลลาร์ แล้วแต่ยี่ห้อ ขอใบเสนอราคาเป็นลายลักษณ์อักษร", "ភ្នំពេញប្រហែល $2,400 · ឈៀងម៉ៃ $1,220–2,232 តាមម៉ាក។ សុំតម្លៃជាលាយលក្ខណ៍អក្សរ។"), src=[ROOMCHANG, SDC, KITCHA]),
+    dict(k=t("Implant with crown", "รากเทียมพร้อมครอบ", "ឫសសិប្បនិម្មិត និងក្រោន"), v=t("Phnom Penh about $2,400 · Chiang Mai $1,220–2,232 by brand.", "พนมเปญราว 2,400 ดอลลาร์ · เชียงใหม่ 1,220–2,232 ดอลลาร์ แล้วแต่ยี่ห้อ", "ភ្នំពេញប្រហែល $2,400 · ឈៀងម៉ៃ $1,220–2,232 តាមម៉ាក។"), src=[ROOMCHANG, SDC, KITCHA]),
     dict(k=t("Who is licensed", "ใครมีใบอนุญาต", "អ្នកណាមានអាជ្ញាប័ណ្ណ"), v=t("Cambodia has had a Dental Council since 2006. In 2008 the Ministry of Health said most dental offices were unregistered. The US and Australian embassies both list Roomchang and the European Dental Clinic.",
           "กัมพูชามีสภาทันตแพทย์ตั้งแต่ปี 2549 ปี 2551 กระทรวงสาธารณสุขบอกว่าร้านทำฟันส่วนใหญ่ไม่ได้จดทะเบียน สถานทูตสหรัฐฯ และออสเตรเลียต่างก็มีชื่อรูมชางและ European Dental Clinic",
           "កម្ពុជាមានក្រុមប្រឹក្សាទន្តសាស្ត្រតាំងពីឆ្នាំ 2006។ ឆ្នាំ 2008 ក្រសួងសុខាភិបាលថា ភាគច្រើនមិនបានចុះបញ្ជី។ ស្ថានទូតអាមេរិក និងអូស្ត្រាលីដាក់ឈ្មោះ Roomchang និង European Dental Clinic។"), src=[COUNCIL, CDAILY, USEMB_MED, AUEMB]),
@@ -330,9 +330,9 @@ HEALTH = dict(id="teeth", icon="i-health", photo="riverside", h=t("Teeth and oys
   dict(t="p", **t("The places that serve them fly them in from France: Marennes-Oléron and Fines de Claire. Topaz on Norodom Boulevard brought in Marennes-Oléron oysters this September, served gratinéed; Sofitel's La Coupole puts French oysters on its Sunday brunch.",
                   "ร้านที่มีขายนำเข้าจากฝรั่งเศส เช่น Marennes-Oléron และ Fines de Claire ร้าน Topaz ถนนนโรดมนำเข้า Marennes-Oléron เมื่อกันยายนนี้ เสิร์ฟแบบอบชีส La Coupole ของโซฟิเทลมีหอยนางรมฝรั่งเศสในบุฟเฟต์บรันช์วันอาทิตย์",
                   "កន្លែងដែលលក់ នាំចូលពីបារាំង៖ Marennes-Oléron និង Fines de Claire។ Topaz នៅមហាវិថីព្រះនរោត្តម នាំចូលក្នុងខែកញ្ញានេះ ហើយដុតឱ្យឆ្អិន។ La Coupole របស់ Sofitel មានងាវបារាំងក្នុងអាហារថ្ងៃអាទិត្យ។", src=[TOPAZ, SOFITEL])),
-  dict(t="p", **t("What an expensive room cannot change: cold does not kill hepatitis A in an oyster, and heat does (90 °C for 90 seconds). The US CDC advises against raw or undercooked oysters because of Vibrio, which is most dangerous to people with liver disease, diabetes, cancer or weak immunity. A 2026 study from eastern Thailand's coast found raw oysters there widely contaminated.",
-                  "สิ่งที่ร้านแพงเปลี่ยนไม่ได้ ความเย็นไม่ฆ่าไวรัสตับอักเสบเอในหอย ความร้อนฆ่าได้ (90 องศา 90 วินาที) CDC สหรัฐฯ แนะนำไม่ให้กินหอยนางรมดิบหรือไม่สุก เพราะเชื้อวิบริโอ อันตรายที่สุดกับคนเป็นโรคตับ เบาหวาน มะเร็ง หรือภูมิคุ้มกันต่ำ งานวิจัยปี 2569 จากชายฝั่งภาคตะวันออกของไทยพบหอยนางรมดิบปนเปื้อนมาก",
-                  "អ្វីដែលភោជនីយដ្ឋានថ្លៃមិនអាចប្ដូរ៖ ភាពត្រជាក់មិនសម្លាប់ជំងឺរលាកថ្លើម A ក្នុងងាវទេ តែកម្ដៅសម្លាប់បាន (90 °C រយៈពេល 90 វិនាទី)។ CDC អាមេរិកណែនាំកុំញ៉ាំងាវឆៅ ដោយសារ Vibrio ដែលគ្រោះថ្នាក់បំផុតចំពោះអ្នកមានជំងឺថ្លើម ទឹកនោមផ្អែម មហារីក ឬភាពស៊ាំខ្សោយ។ ការសិក្សាឆ្នាំ 2026 នៅឆ្នេរភាគខាងកើតថៃ រកឃើញងាវឆៅមានមេរោគច្រើន។", src=[FSANZ, CDC_V, PNTD])),
+  dict(t="p", **t("Cold does not kill hepatitis A in an oyster, and heat does (90 °C for 90 seconds). A 2026 study from eastern Thailand's coast found raw oysters there widely contaminated.",
+                  "ความเย็นไม่ฆ่าไวรัสตับอักเสบเอในหอย ความร้อนฆ่าได้ (90 องศา 90 วินาที) งานวิจัยปี 2569 จากชายฝั่งภาคตะวันออกของไทยพบหอยนางรมดิบปนเปื้อนมาก",
+                  "ភាពត្រជាក់មិនសម្លាប់ជំងឺរលាកថ្លើម A ក្នុងងាវទេ តែកម្ដៅសម្លាប់បាន (90 °C រយៈពេល 90 វិនាទី)។ ការសិក្សាឆ្នាំ 2026 នៅឆ្នេរភាគខាងកើតថៃ រកឃើញងាវឆៅមានមេរោគច្រើន។", src=[FSANZ, PNTD])),
   dict(t="ride", lat=11.54846, lng=104.92849, name="Topaz Restaurant"),
 ])
 
@@ -347,7 +347,7 @@ def step(when, what, how, src=None):
 TODO = dict(id="todo", icon="i-check", photo="tuk-tuk", h=t("Do this", "ต้องทำ", "ត្រូវធ្វើ"), blocks=[
   dict(t="steps", steps=[
     step(t("Before you book", "ก่อนจอง", "មុនកក់"), t("Passport: 6 months left, 1 blank page", "พาสปอร์ตเหลือ 6 เดือน มีหน้าว่าง 1 หน้า", "លិខិតឆ្លងដែន៖ នៅសល់ 6 ខែ ទំព័រទំនេរ 1"),
-         t("Check it now; a renewal takes weeks.", "เช็กตอนนี้ ต่ออายุใช้เวลาหลายสัปดาห์", "ពិនិត្យឥឡូវ ការបន្តត្រូវការច្រើនសប្ដាហ៍។"), TOURISM),
+         t("A renewal takes weeks.", "ต่ออายุใช้เวลาหลายสัปดาห์", "ការបន្តត្រូវការច្រើនសប្ដាហ៍។"), TOURISM),
     step(t("Before you book", "ก่อนจอง", "មុនកក់"), t("On a Thai extension of stay? Re-entry permit", "อยู่ด้วยการต่ออายุ? ทำรีเอ็นทรี", "ស្នាក់ដោយការបន្ត? ធ្វើលិខិតចូលវិញ"),
          t("฿1,000 at Chiang Mai immigration or the airport before you fly. Without it the stay ends at the gate. DTV holders skip this.", "1,000 บาท ที่ ตม. เชียงใหม่หรือสนามบินก่อนบิน ถ้าไม่มี การอยู่ต่อสิ้นสุดตอนออก ผู้ถือ DTV ไม่ต้องทำ", "฿1,000 នៅអន្តោប្រវេសន៍ឈៀងម៉ៃ ឬព្រលានមុនហោះ។ បើគ្មាន ការស្នាក់នៅបញ្ចប់។ អ្នកកាន់ DTV មិនបាច់។"), REENTRY),
     step(t("Book", "จอง", "កក់"), t("Chiang Mai → Bangkok → Phnom Penh (KTI); home from Siem Reap (SAI) → Bangkok", "เชียงใหม่ → กรุงเทพฯ → พนมเปญ (KTI) ขากลับเสียมราฐ (SAI) → กรุงเทพฯ", "ឈៀងម៉ៃ → បាងកក → ភ្នំពេញ (KTI) ត្រឡប់ពីសៀមរាប (SAI) → បាងកក"),

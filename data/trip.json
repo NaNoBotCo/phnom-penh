@@ -503,9 +503,9 @@
         "km": "លិខិតឆ្លងដែន៖ នៅសល់ 6 ខែ ទំព័រទំនេរ 1"
        },
        "how": {
-        "en": "Check it now; a renewal takes weeks.",
-        "th": "เช็กตอนนี้ ต่ออายุใช้เวลาหลายสัปดาห์",
-        "km": "ពិនិត្យឥឡូវ ការបន្តត្រូវការច្រើនសប្ដាហ៍។"
+        "en": "A renewal takes weeks.",
+        "th": "ต่ออายุใช้เวลาหลายสัปดาห์",
+        "km": "ការបន្តត្រូវការច្រើនសប្ដាហ៍។"
        },
        "src": "https://www.tourismcambodia.com/tripplanner/essential-information/visa-passport.htm"
       },
@@ -1548,9 +1548,9 @@
         "km": "ឫសសិប្បនិម្មិត និងក្រោន"
        },
        "v": {
-        "en": "Phnom Penh about $2,400 · Chiang Mai $1,220–2,232 by brand. Ask for the price in writing.",
-        "th": "พนมเปญราว 2,400 ดอลลาร์ · เชียงใหม่ 1,220–2,232 ดอลลาร์ แล้วแต่ยี่ห้อ ขอใบเสนอราคาเป็นลายลักษณ์อักษร",
-        "km": "ភ្នំពេញប្រហែល $2,400 · ឈៀងម៉ៃ $1,220–2,232 តាមម៉ាក។ សុំតម្លៃជាលាយលក្ខណ៍អក្សរ។"
+        "en": "Phnom Penh about $2,400 · Chiang Mai $1,220–2,232 by brand.",
+        "th": "พนมเปญราว 2,400 ดอลลาร์ · เชียงใหม่ 1,220–2,232 ดอลลาร์ แล้วแต่ยี่ห้อ",
+        "km": "ភ្នំពេញប្រហែល $2,400 · ឈៀងម៉ៃ $1,220–2,232 តាមម៉ាក។"
        },
        "src": [
         "https://www.roomchang.com/en",
@@ -1602,12 +1602,11 @@
     },
     {
      "t": "p",
-     "en": "What an expensive room cannot change: cold does not kill hepatitis A in an oyster, and heat does (90 °C for 90 seconds). The US CDC advises against raw or undercooked oysters because of Vibrio, which is most dangerous to people with liver disease, diabetes, cancer or weak immunity. A 2026 study from eastern Thailand's coast found raw oysters there widely contaminated.",
-     "th": "สิ่งที่ร้านแพงเปลี่ยนไม่ได้ ความเย็นไม่ฆ่าไวรัสตับอักเสบเอในหอย ความร้อนฆ่าได้ (90 องศา 90 วินาที) CDC สหรัฐฯ แนะนำไม่ให้กินหอยนางรมดิบหรือไม่สุก เพราะเชื้อวิบริโอ อันตรายที่สุดกับคนเป็นโรคตับ เบาหวาน มะเร็ง หรือภูมิคุ้มกันต่ำ งานวิจัยปี 2569 จากชายฝั่งภาคตะวันออกของไทยพบหอยนางรมดิบปนเปื้อนมาก",
-     "km": "អ្វីដែលភោជនីយដ្ឋានថ្លៃមិនអាចប្ដូរ៖ ភាពត្រជាក់មិនសម្លាប់ជំងឺរលាកថ្លើម A ក្នុងងាវទេ តែកម្ដៅសម្លាប់បាន (90 °C រយៈពេល 90 វិនាទី)។ CDC អាមេរិកណែនាំកុំញ៉ាំងាវឆៅ ដោយសារ Vibrio ដែលគ្រោះថ្នាក់បំផុតចំពោះអ្នកមានជំងឺថ្លើម ទឹកនោមផ្អែម មហារីក ឬភាពស៊ាំខ្សោយ។ ការសិក្សាឆ្នាំ 2026 នៅឆ្នេរភាគខាងកើតថៃ រកឃើញងាវឆៅមានមេរោគច្រើន។",
+     "en": "Cold does not kill hepatitis A in an oyster, and heat does (90 °C for 90 seconds). A 2026 study from eastern Thailand's coast found raw oysters there widely contaminated.",
+     "th": "ความเย็นไม่ฆ่าไวรัสตับอักเสบเอในหอย ความร้อนฆ่าได้ (90 องศา 90 วินาที) งานวิจัยปี 2569 จากชายฝั่งภาคตะวันออกของไทยพบหอยนางรมดิบปนเปื้อนมาก",
+     "km": "ភាពត្រជាក់មិនសម្លាប់ជំងឺរលាកថ្លើម A ក្នុងងាវទេ តែកម្ដៅសម្លាប់បាន (90 °C រយៈពេល 90 វិនាទី)។ ការសិក្សាឆ្នាំ 2026 នៅឆ្នេរភាគខាងកើតថៃ រកឃើញងាវឆៅមានមេរោគច្រើន។",
      "src": [
       "https://www.foodstandards.gov.au/sites/default/files/2023-11/Bivalve%20molluscs%20and%20Hepatitis%20A.pdf",
-      "https://www.cdc.gov/vibrio/prevention/index.html",
       "https://journals.plos.org/plosntds/article?id=10.1371%2Fjournal.pntd.0014353"
      ]
     },

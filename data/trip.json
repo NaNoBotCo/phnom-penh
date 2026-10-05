@@ -543,18 +543,7 @@
         "th": "ค้นรหัส KTI ไม่ใช่ PNH ตั๋วต่อเครื่องจากเชียงใหม่ราว 120–240 ดอลลาร์ต่อเที่ยวในเว็บจอง",
         "km": "ស្វែងរកកូដ KTI មិនមែន PNH។ តម្លៃពីឈៀងម៉ៃ ប្រហែល $120–240 ម្ដងៗ។"
        },
-       "src": "https://www.skyscanner.com/routes/cnx/sai/chiang-mai-to-siem-reap-angkor.html",
-       "paid": {
-        "url": "https://aviasales.tpx.li/6l0bdsgE",
-        "en": "Fares · Aviasales",
-        "th": "ราคาตั๋ว · Aviasales",
-        "km": "តម្លៃសំបុត្រ · Aviasales",
-        "label": {
-         "en": "Paid link: this site earns a fee if you book.",
-         "th": "ลิงก์มีค่าตอบแทน: เว็บนี้ได้ค่าแนะนำเมื่อคุณจองผ่านลิงก์นี้",
-         "km": "តំណមានកម្រៃ៖ គេហទំព័រនេះទទួលបានកម្រៃពេលអ្នកកក់តាមតំណនេះ"
-        }
-       }
+       "src": "https://www.skyscanner.com/routes/cnx/sai/chiang-mai-to-siem-reap-angkor.html"
       },
       {
        "when": {
@@ -633,18 +622,7 @@
        "src": [
         "https://ticket.angkorenterprise.gov.kh/",
         "https://www.siemreap.net/guides/angkor/hours-admission/"
-       ],
-       "paid": {
-        "url": "https://klook.tpx.li/qUnoIXOS",
-        "en": "Angkor tours · Klook",
-        "th": "ทัวร์นครวัด · Klook",
-        "km": "ដំណើរកម្សាន្តអង្គរ · Klook",
-        "label": {
-         "en": "Paid link: this site earns a fee if you book.",
-         "th": "ลิงก์มีค่าตอบแทน: เว็บนี้ได้ค่าแนะนำเมื่อคุณจองผ่านลิงก์นี้",
-         "km": "តំណមានកម្រៃ៖ គេហទំព័រនេះទទួលបានកម្រៃពេលអ្នកកក់តាមតំណនេះ"
-        }
-       }
+       ]
       },
       {
        "when": {
@@ -905,18 +883,7 @@
         "th": "ราว 10–21 ดอลลาร์ถึงใจกลางเมือง 30–60 นาที แล้วแต่รถติด",
         "km": "ប្រហែល $10–21 ទៅកណ្ដាលក្រុង 30–60 នាទី អាស្រ័យលើចរាចរណ៍។"
        },
-       "src": "https://cambopedia.com/how-to-get-from-techo-international-airport-to-phnom-penh/",
-       "paid": {
-        "url": "https://kiwitaxi.tpx.li/8garT4vO",
-        "en": "Fixed-price car from KTI · Kiwitaxi",
-        "th": "รถราคาเหมาจาก KTI · Kiwitaxi",
-        "km": "ឡានតម្លៃថេរពី KTI · Kiwitaxi",
-        "label": {
-         "en": "Paid link: this site earns a fee if you book.",
-         "th": "ลิงก์มีค่าตอบแทน: เว็บนี้ได้ค่าแนะนำเมื่อคุณจองผ่านลิงก์นี้",
-         "km": "តំណមានកម្រៃ៖ គេហទំព័រនេះទទួលបានកម្រៃពេលអ្នកកក់តាមតំណនេះ"
-        }
-       }
+       "src": "https://cambopedia.com/how-to-get-from-techo-international-airport-to-phnom-penh/"
       },
       {
        "k": {
@@ -953,18 +920,7 @@
         "th": "ใหม่เหมือนกัน (2566) ห่างเมืองราว 50 กม. รถรับส่ง 8 ดอลลาร์ รถเหมา 35 ดอลลาร์",
         "km": "ថ្មីដូចគ្នា (2023) ប្រហែល 50 គ.ម ពីទីក្រុង។ ឡានដឹក $8 ឡានឯកជន $35។"
        },
-       "src": "https://www.siemreap.net/guides/travel/siem-reap-angkor-international-airport/",
-       "paid": {
-        "url": "https://kiwitaxi.tpx.li/ESEGYViu",
-        "en": "Fixed-price car from SAI · Kiwitaxi",
-        "th": "รถราคาเหมาจาก SAI · Kiwitaxi",
-        "km": "ឡានតម្លៃថេរពី SAI · Kiwitaxi",
-        "label": {
-         "en": "Paid link: this site earns a fee if you book.",
-         "th": "ลิงก์มีค่าตอบแทน: เว็บนี้ได้ค่าแนะนำเมื่อคุณจองผ่านลิงก์นี้",
-         "km": "តំណមានកម្រៃ៖ គេហទំព័រនេះទទួលបានកម្រៃពេលអ្នកកក់តាមតំណនេះ"
-        }
-       }
+       "src": "https://www.siemreap.net/guides/travel/siem-reap-angkor-international-airport/"
       }
      ]
     },

@@ -10,7 +10,7 @@ Writes  docs/index.html  docs/data/*.js  docs/img/  docs/card.jpg
 The data files load as <script src>, not fetch(), so the page also works opened
 straight from disk (file://).
 """
-import gzip, json, math, os, re, shutil, sys
+import copy, gzip, json, math, os, re, shutil, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -230,9 +230,25 @@ def card(credits):
 
 # ---------- trip page ----------
 
+def resolve_paid(o, aff):
+    """Swap each slot id for its paid link from data/affiliate.json (affiliate-slots/sync.py); a null url drops it."""
+    if isinstance(o, list):
+        for x in o:
+            resolve_paid(x, aff)
+    elif isinstance(o, dict):
+        if "slot" in o:
+            s = aff["slots"].get(o.pop("slot") or "") or {}
+            if s.get("url"):
+                o["paid"] = {"url": s["url"], "en": s["en"], "th": s["th"], "km": s["km"],
+                             "label": {k: aff["label_" + k] for k in ("en", "th", "km")}}
+        for v in o.values():
+            resolve_paid(v, aff)
+
+
 def trip_content_boot(TC):
     order = ["TODO", "VISA", "AIR", "FLY", "STAY", "PRICE_SEC", "NAGA", "SPIRITS", "HEALTH", "EAT"]  # HEALTH id "teeth"
-    secs = [getattr(TC, k) for k in order if hasattr(TC, k)]
+    secs = copy.deepcopy([getattr(TC, k) for k in order if hasattr(TC, k)])
+    resolve_paid(secs, json.loads((ROOT / "data" / "affiliate.json").read_text(encoding="utf-8")))
     t = TC.t
     return {"band": "angkor-sunrise", "rates": TC.RATES, "cities": TC.CITIES, "words": TC.WORDS,
             "prices": TC.PRICES, "picks": TC.PICKS, "budget": TC.BUDGET, "sections": secs,

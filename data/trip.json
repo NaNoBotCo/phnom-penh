@@ -503,9 +503,9 @@
         "km": "លិខិតឆ្លងដែន៖ នៅសល់ 6 ខែ ទំព័រទំនេរ 1"
        },
        "how": {
-        "en": "Check it now; a renewal takes weeks.",
-        "th": "เช็กตอนนี้ ต่ออายุใช้เวลาหลายสัปดาห์",
-        "km": "ពិនិត្យឥឡូវ ការបន្តត្រូវការច្រើនសប្ដាហ៍។"
+        "en": "A renewal takes weeks.",
+        "th": "ต่ออายุใช้เวลาหลายสัปดาห์",
+        "km": "ការបន្តត្រូវការច្រើនសប្ដាហ៍។"
        },
        "src": "https://www.tourismcambodia.com/tripplanner/essential-information/visa-passport.htm"
       },
@@ -543,7 +543,18 @@
         "th": "ค้นรหัส KTI ไม่ใช่ PNH ตั๋วต่อเครื่องจากเชียงใหม่ราว 120–240 ดอลลาร์ต่อเที่ยวในเว็บจอง",
         "km": "ស្វែងរកកូដ KTI មិនមែន PNH។ តម្លៃពីឈៀងម៉ៃ ប្រហែល $120–240 ម្ដងៗ។"
        },
-       "src": "https://www.skyscanner.com/routes/cnx/sai/chiang-mai-to-siem-reap-angkor.html"
+       "src": "https://www.skyscanner.com/routes/cnx/sai/chiang-mai-to-siem-reap-angkor.html",
+       "paid": {
+        "url": "https://aviasales.tpx.li/6l0bdsgE",
+        "en": "Fares · Aviasales",
+        "th": "ราคาตั๋ว · Aviasales",
+        "km": "តម្លៃសំបុត្រ · Aviasales",
+        "label": {
+         "en": "Paid link: this site earns a fee if you book.",
+         "th": "ลิงก์มีค่าตอบแทน: เว็บนี้ได้ค่าแนะนำเมื่อคุณจองผ่านลิงก์นี้",
+         "km": "តំណមានកម្រៃ៖ គេហទំព័រនេះទទួលបានកម្រៃពេលអ្នកកក់តាមតំណនេះ"
+        }
+       }
       },
       {
        "when": {
@@ -622,7 +633,18 @@
        "src": [
         "https://ticket.angkorenterprise.gov.kh/",
         "https://www.siemreap.net/guides/angkor/hours-admission/"
-       ]
+       ],
+       "paid": {
+        "url": "https://klook.tpx.li/qUnoIXOS",
+        "en": "Angkor tours · Klook",
+        "th": "ทัวร์นครวัด · Klook",
+        "km": "ដំណើរកម្សាន្តអង្គរ · Klook",
+        "label": {
+         "en": "Paid link: this site earns a fee if you book.",
+         "th": "ลิงก์มีค่าตอบแทน: เว็บนี้ได้ค่าแนะนำเมื่อคุณจองผ่านลิงก์นี้",
+         "km": "តំណមានកម្រៃ៖ គេហទំព័រនេះទទួលបានកម្រៃពេលអ្នកកក់តាមតំណនេះ"
+        }
+       }
       },
       {
        "when": {
@@ -883,7 +905,18 @@
         "th": "ราว 10–21 ดอลลาร์ถึงใจกลางเมือง 30–60 นาที แล้วแต่รถติด",
         "km": "ប្រហែល $10–21 ទៅកណ្ដាលក្រុង 30–60 នាទី អាស្រ័យលើចរាចរណ៍។"
        },
-       "src": "https://cambopedia.com/how-to-get-from-techo-international-airport-to-phnom-penh/"
+       "src": "https://cambopedia.com/how-to-get-from-techo-international-airport-to-phnom-penh/",
+       "paid": {
+        "url": "https://kiwitaxi.tpx.li/8garT4vO",
+        "en": "Fixed-price car from KTI · Kiwitaxi",
+        "th": "รถราคาเหมาจาก KTI · Kiwitaxi",
+        "km": "ឡានតម្លៃថេរពី KTI · Kiwitaxi",
+        "label": {
+         "en": "Paid link: this site earns a fee if you book.",
+         "th": "ลิงก์มีค่าตอบแทน: เว็บนี้ได้ค่าแนะนำเมื่อคุณจองผ่านลิงก์นี้",
+         "km": "តំណមានកម្រៃ៖ គេហទំព័រនេះទទួលបានកម្រៃពេលអ្នកកក់តាមតំណនេះ"
+        }
+       }
       },
       {
        "k": {
@@ -896,7 +929,18 @@
         "th": "เคาน์เตอร์ซิม (Cellcard, Smart, Metfone) หลังรับกระเป๋า มีตู้ ATM ที่ขาเข้า ใช้ดอลลาร์ได้ทุกที่ ทอนเป็นเรียล",
         "km": "តូបស៊ីម (Cellcard, Smart, Metfone) ក្រោយយកឥវ៉ាន់ និង ATM នៅច្រកមកដល់។ ប្រើដុល្លារបានគ្រប់កន្លែង ប្រាក់អាប់ជារៀល។"
        },
-       "src": "https://www.wingbank.com.kh/en/news/wing-atms-now-at-techo-international-airport"
+       "src": "https://www.wingbank.com.kh/en/news/wing-atms-now-at-techo-international-airport",
+       "paid": {
+        "url": "https://airalo.tpx.li/eFk4cag9",
+        "en": "Cambodia eSIM · Airalo",
+        "th": "eSIM กัมพูชา · Airalo",
+        "km": "eSIM កម្ពុជា · Airalo",
+        "label": {
+         "en": "Paid link: this site earns a fee if you book.",
+         "th": "ลิงก์มีค่าตอบแทน: เว็บนี้ได้ค่าแนะนำเมื่อคุณจองผ่านลิงก์นี้",
+         "km": "តំណមានកម្រៃ៖ គេហទំព័រនេះទទួលបានកម្រៃពេលអ្នកកក់តាមតំណនេះ"
+        }
+       }
       },
       {
        "k": {
@@ -909,7 +953,18 @@
         "th": "ใหม่เหมือนกัน (2566) ห่างเมืองราว 50 กม. รถรับส่ง 8 ดอลลาร์ รถเหมา 35 ดอลลาร์",
         "km": "ថ្មីដូចគ្នា (2023) ប្រហែល 50 គ.ម ពីទីក្រុង។ ឡានដឹក $8 ឡានឯកជន $35។"
        },
-       "src": "https://www.siemreap.net/guides/travel/siem-reap-angkor-international-airport/"
+       "src": "https://www.siemreap.net/guides/travel/siem-reap-angkor-international-airport/",
+       "paid": {
+        "url": "https://kiwitaxi.tpx.li/ESEGYViu",
+        "en": "Fixed-price car from SAI · Kiwitaxi",
+        "th": "รถราคาเหมาจาก SAI · Kiwitaxi",
+        "km": "ឡានតម្លៃថេរពី SAI · Kiwitaxi",
+        "label": {
+         "en": "Paid link: this site earns a fee if you book.",
+         "th": "ลิงก์มีค่าตอบแทน: เว็บนี้ได้ค่าแนะนำเมื่อคุณจองผ่านลิงก์นี้",
+         "km": "តំណមានកម្រៃ៖ គេហទំព័រនេះទទួលបានកម្រៃពេលអ្នកកក់តាមតំណនេះ"
+        }
+       }
       }
      ]
     },
@@ -1548,9 +1603,9 @@
         "km": "ឫសសិប្បនិម្មិត និងក្រោន"
        },
        "v": {
-        "en": "Phnom Penh about $2,400 · Chiang Mai $1,220–2,232 by brand. Ask for the price in writing.",
-        "th": "พนมเปญราว 2,400 ดอลลาร์ · เชียงใหม่ 1,220–2,232 ดอลลาร์ แล้วแต่ยี่ห้อ ขอใบเสนอราคาเป็นลายลักษณ์อักษร",
-        "km": "ភ្នំពេញប្រហែល $2,400 · ឈៀងម៉ៃ $1,220–2,232 តាមម៉ាក។ សុំតម្លៃជាលាយលក្ខណ៍អក្សរ។"
+        "en": "Phnom Penh about $2,400 · Chiang Mai $1,220–2,232 by brand.",
+        "th": "พนมเปญราว 2,400 ดอลลาร์ · เชียงใหม่ 1,220–2,232 ดอลลาร์ แล้วแต่ยี่ห้อ",
+        "km": "ភ្នំពេញប្រហែល $2,400 · ឈៀងម៉ៃ $1,220–2,232 តាមម៉ាក។"
        },
        "src": [
         "https://www.roomchang.com/en",
@@ -1602,12 +1657,11 @@
     },
     {
      "t": "p",
-     "en": "What an expensive room cannot change: cold does not kill hepatitis A in an oyster, and heat does (90 °C for 90 seconds). The US CDC advises against raw or undercooked oysters because of Vibrio, which is most dangerous to people with liver disease, diabetes, cancer or weak immunity. A 2026 study from eastern Thailand's coast found raw oysters there widely contaminated.",
-     "th": "สิ่งที่ร้านแพงเปลี่ยนไม่ได้ ความเย็นไม่ฆ่าไวรัสตับอักเสบเอในหอย ความร้อนฆ่าได้ (90 องศา 90 วินาที) CDC สหรัฐฯ แนะนำไม่ให้กินหอยนางรมดิบหรือไม่สุก เพราะเชื้อวิบริโอ อันตรายที่สุดกับคนเป็นโรคตับ เบาหวาน มะเร็ง หรือภูมิคุ้มกันต่ำ งานวิจัยปี 2569 จากชายฝั่งภาคตะวันออกของไทยพบหอยนางรมดิบปนเปื้อนมาก",
-     "km": "អ្វីដែលភោជនីយដ្ឋានថ្លៃមិនអាចប្ដូរ៖ ភាពត្រជាក់មិនសម្លាប់ជំងឺរលាកថ្លើម A ក្នុងងាវទេ តែកម្ដៅសម្លាប់បាន (90 °C រយៈពេល 90 វិនាទី)។ CDC អាមេរិកណែនាំកុំញ៉ាំងាវឆៅ ដោយសារ Vibrio ដែលគ្រោះថ្នាក់បំផុតចំពោះអ្នកមានជំងឺថ្លើម ទឹកនោមផ្អែម មហារីក ឬភាពស៊ាំខ្សោយ។ ការសិក្សាឆ្នាំ 2026 នៅឆ្នេរភាគខាងកើតថៃ រកឃើញងាវឆៅមានមេរោគច្រើន។",
+     "en": "Cold does not kill hepatitis A in an oyster, and heat does (90 °C for 90 seconds). A 2026 study from eastern Thailand's coast found raw oysters there widely contaminated.",
+     "th": "ความเย็นไม่ฆ่าไวรัสตับอักเสบเอในหอย ความร้อนฆ่าได้ (90 องศา 90 วินาที) งานวิจัยปี 2569 จากชายฝั่งภาคตะวันออกของไทยพบหอยนางรมดิบปนเปื้อนมาก",
+     "km": "ភាពត្រជាក់មិនសម្លាប់ជំងឺរលាកថ្លើម A ក្នុងងាវទេ តែកម្ដៅសម្លាប់បាន (90 °C រយៈពេល 90 វិនាទី)។ ការសិក្សាឆ្នាំ 2026 នៅឆ្នេរភាគខាងកើតថៃ រកឃើញងាវឆៅមានមេរោគច្រើន។",
      "src": [
       "https://www.foodstandards.gov.au/sites/default/files/2023-11/Bivalve%20molluscs%20and%20Hepatitis%20A.pdf",
-      "https://www.cdc.gov/vibrio/prevention/index.html",
       "https://journals.plos.org/plosntds/article?id=10.1371%2Fjournal.pntd.0014353"
      ]
     },
